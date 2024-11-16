@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "foundground:block/deep_mycelium_top",
+    "down": "minecraft:block/deepslate_top",
+    "up": "foundground:block/deep_mycelium_top",
+    "north": "foundground:block/deep_mycelium",
+    "east": "foundground:block/deep_mycelium",
+    "south": "foundground:block/deep_mycelium",
+    "west": "foundground:block/deep_mycelium"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "foundground:block/goldlauncherside",
+    "down": "foundground:block/goldlauncherbottom",
+    "up": "foundground:block/goldlaunchertop",
+    "north": "foundground:block/goldlauncherside",
+    "east": "foundground:block/goldlauncherside",
+    "south": "foundground:block/goldlauncherside",
+    "west": "foundground:block/goldlauncherside"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "foundground:block/shroomitelauncherside",
+    "down": "foundground:block/shroomitelauncherbottom",
+    "up": "foundground:block/shroomitelaunchertop",
+    "north": "foundground:block/shroomitelauncherside",
+    "east": "foundground:block/shroomitelauncherside",
+    "south": "foundground:block/shroomitelauncherside",
+    "west": "foundground:block/shroomitelauncherside"
+  }
+}

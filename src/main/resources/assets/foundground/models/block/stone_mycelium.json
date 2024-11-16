@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/mycelium_top",
+    "down": "minecraft:block/stone",
+    "up": "minecraft:block/mycelium_top",
+    "north": "foundground:block/stone_mycelium",
+    "east": "foundground:block/stone_mycelium",
+    "south": "foundground:block/stone_mycelium",
+    "west": "foundground:block/stone_mycelium"
+  }
+}

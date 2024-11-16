@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "foundground:block/cyan_mushroom"
+    },
+    "half=lower": {
+      "model": "foundground:block/tall_mushroom_bottom"
+    }
+  }
+}

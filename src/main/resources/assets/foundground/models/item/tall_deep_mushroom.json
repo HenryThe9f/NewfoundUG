@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "foundground:block/tall_deep_mushroom"
+  }
+}

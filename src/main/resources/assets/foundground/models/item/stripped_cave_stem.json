@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "foundground:block/stem_top",
+    "side": "foundground:block/stripped_stem"
+  }
+}

@@ -1,6 +1,9 @@
 package net.HenryThe9f.foundground;
 
 import com.mojang.logging.LogUtils;
+import net.HenryThe9f.foundground.block.ModBlocks;
+import net.HenryThe9f.foundground.item.ModCreativeModeTabs;
+import net.HenryThe9f.foundground.item.Moditems;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,6 +33,9 @@ public class Newfound_Underground
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+        Moditems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -50,7 +56,7 @@ public class Newfound_Underground
 
     }
 
-    // Add the example block item to the building blocks tab
+    // Add the example block item to the building block tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
 

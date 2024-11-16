@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "foundground:block/shroomite_launcher_bottom"
+    },
+    "type=double": {
+      "model": "foundground:block/shroomite_launcher_double"
+    },
+    "type=top": {
+      "model": "foundground:block/shroomite_launcher_top"
+    }
+  }
+}

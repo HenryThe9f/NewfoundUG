@@ -1,0 +1,17 @@
+
+{
+  "variants": {
+    "axis=x": {
+      "model": "foundground:block/cave_hyphae_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "foundground:block/cave_hyphae"
+    },
+    "axis=z": {
+      "model": "foundground:block/cave_hyphae_horizontal",
+      "x": 90
+    }
+  }
+}
