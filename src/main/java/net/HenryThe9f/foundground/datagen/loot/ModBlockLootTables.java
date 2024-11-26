@@ -25,7 +25,39 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-       // this.dropSelf(ModBlocks.EX.get());
+        this.dropSelf(ModBlocks.MUSHROOM_PLANKS.get());
+        this.dropSelf(ModBlocks.MUSHROOM_SLAB.get());
+        this.dropSelf(ModBlocks.MUSHROOM_STAIRS.get());
+        this.dropSelf(ModBlocks.MUSHROOM_BUTTON.get());
+        this.dropSelf(ModBlocks.MUSHROOM_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.MUSHROOM_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.MUSHROOM_DOOR.get());
+        this.dropSelf(ModBlocks.MUSHROOM_FENCE.get());
+        this.dropSelf(ModBlocks.MUSHROOM_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.SMORGASBOARDS.get());
+        this.dropSelf(ModBlocks.SMORGLASS.get());
+        this.dropSelf(ModBlocks.SMORGLASS_PANE.get());
+        this.dropSelf(ModBlocks.SMORG_STAIRS.get());
+        this.dropSelf(ModBlocks.SMORG_SLAB.get());
+        this.dropSelf(ModBlocks.SMORG_WALL.get());
+        this.dropSelf(ModBlocks.SMORG_BUTTON.get());
+        this.dropSelf(ModBlocks.SMORG_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.CAVE_HYPHAE.get());
+        this.dropSelf(ModBlocks.STRIPPED_CAVE_HYPHAE.get());
+        this.dropSelf(ModBlocks.CAVE_STEM.get());
+        this.dropSelf(ModBlocks.STRIPPED_CAVE_STEM.get());
+        this.dropSelf(ModBlocks.CAVE_MUSHROOM.get());
+        this.dropSelf(ModBlocks.DEEP_MUSHROOM.get());
+        this.dropSelf(ModBlocks.PALE_MUSHROOM.get());
+        this.dropSelf(ModBlocks.CYAN_MUSHROOM.get());
+        this.dropSelf(ModBlocks.SHROOMITE_LAUNCHER.get());
+        this.dropSelf(ModBlocks.GOLD_LAUNCHER.get());
+        this.dropSelf(ModBlocks.GOLD_MUSHROOM.get());
+        this.dropSelf(ModBlocks.LEAD_MUSHROOM.get());
+        this.dropSelf(ModBlocks.TALL_CAVE_MUSHROOM.get());
+        this.dropSelf(ModBlocks.TALL_PALE_MUSHROOM.get());
+        this.dropSelf(ModBlocks.TALL_CYAN_MUSHROOM.get());
+        this.dropSelf(ModBlocks.TALL_DEEP_MUSHROOM.get());
 
     }
 

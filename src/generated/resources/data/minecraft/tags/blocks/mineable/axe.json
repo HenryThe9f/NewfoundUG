@@ -1,0 +1,27 @@
+{
+  "values": [
+    "foundground:cave_stem",
+    "foundground:stripped_cave_hyphae",
+    "foundground:stripped_cave_stem",
+    "foundground:mushroom_planks",
+    "foundground:mushroom_stairs",
+    "foundground:mushroom_slab",
+    "foundground:mushroom_button",
+    "foundground:mushroom_pressure_plate",
+    "foundground:mushroom_fence",
+    "foundground:mushroom_fence_gate",
+    "foundground:mushroom_door",
+    "foundground:mushroom_trapdoor",
+    "foundground:smorgasboards",
+    "foundground:smorg_slab",
+    "foundground:smorg_stairs",
+    "foundground:smorg_button",
+    "foundground:smorg_pressure_plate",
+    "foundground:smorg_wall",
+    "foundground:deep_mushroom_cap",
+    "foundground:cave_mushroom_cap",
+    "foundground:pale_mushroom_cap",
+    "foundground:cyan_mushroom_cap",
+    "foundground:cave_hyphae"
+  ]
+}

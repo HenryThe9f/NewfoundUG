@@ -1,0 +1,7 @@
+// 1.20.1	2024-11-20T19:00:08.1910028	Tags for minecraft:block mod id foundground
+72403408ad4fe3cad65a4fe78d1f01d6a4546c70 data/minecraft/tags/blocks/fences.json
+c6ce7e19a66313344fc7e2d5dd3c6e47da3d3125 data/minecraft/tags/blocks/fence_gates.json
+f4465f34fcee9e21dc89d5cd490aec61322c40aa data/minecraft/tags/blocks/mineable/axe.json
+a5393c8a6391929d1e1964cf4af26246dff9df83 data/minecraft/tags/blocks/mineable/pickaxe.json
+7e810425f2e6b95f49fd1ce8db8aa9b1fae96c2f data/minecraft/tags/blocks/mushroom_grow_block.json
+1f50b57a3dc04400fa85a269c0e8083535517edf data/minecraft/tags/blocks/walls.json

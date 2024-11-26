@@ -30,6 +30,15 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.STRIPPED_CAVE_STEM .get());
                         pOutput.accept(ModBlocks.CAVE_HYPHAE .get());
                         pOutput.accept(ModBlocks.STRIPPED_CAVE_HYPHAE .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_PLANKS .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_SLAB .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_STAIRS .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_FENCE .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_FENCE_GATE .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_BUTTON .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_PRESSURE_PLATE .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_DOOR .get());
+                        pOutput.accept(ModBlocks.MUSHROOM_TRAPDOOR .get());
                         pOutput.accept(ModBlocks.CAVE_MUSHROOM .get());
                         pOutput.accept(ModBlocks.DEEP_MUSHROOM .get());
                         pOutput.accept(ModBlocks.PALE_MUSHROOM .get());
@@ -44,7 +53,13 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.SHROOMITE_LAUNCHER .get());
                         pOutput.accept(ModBlocks.SMORGASBOARDS.get());
                         pOutput.accept(ModBlocks.SMORGLASS .get());
-
+                        pOutput.accept(ModBlocks.SMORGLASS_PANE .get());
+                        pOutput.accept(ModBlocks.SMORG_SLAB .get());
+                        pOutput.accept(ModBlocks.SMORG_STAIRS .get());
+                        pOutput.accept(ModBlocks.SMORG_WALL .get());
+                        pOutput.accept(ModBlocks.SMORG_BUTTON .get());
+                        pOutput.accept(ModBlocks.SMORG_PRESSURE_PLATE .get());
+                        pOutput.accept(Moditems.GOLD_SPORES .get());
 
                     })
                     .build());

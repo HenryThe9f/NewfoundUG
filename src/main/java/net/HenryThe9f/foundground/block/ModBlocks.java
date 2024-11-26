@@ -3,11 +3,17 @@ package net.HenryThe9f.foundground.block;
 import net.HenryThe9f.foundground.Newfound_Underground;
 import net.HenryThe9f.foundground.block.custom.*;
 import net.HenryThe9f.foundground.item.Moditems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.HugeBrownMushroomFeature;
 import net.minecraft.world.level.levelgen.feature.HugeRedMushroomFeature;
@@ -49,14 +55,37 @@ public class ModBlocks {
             ()-> new GoldLauncherSlabBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)) {
             });
     public static final RegistryObject<Block> SHROOMITE_LAUNCHER = registerBlock("shroomite_launcher",
-            ()-> new ShroomiteLauncherSlabBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)) {
+            ()-> new ShroomiteLauncherSlabBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(1, 1200)) {
             });
     public static final RegistryObject<Block> SMORGASBOARDS = registerBlock("smorgasboards",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.CHISELED_BOOKSHELF)) {
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.CHISELED_BOOKSHELF).strength(1, 1200)) {
             });
     public static final RegistryObject<Block> SMORGLASS = registerBlock("smorglass",
-            ()-> new SmorglassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion().explosionResistance(1200)) {
+            ()-> new SmorglassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion().explosionResistance(1200).strength(1, 1200)) {
             });
+    public static final RegistryObject<Block> SMORGLASS_PANE = registerBlock("smorglass_pane",
+            ()-> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE).noOcclusion().explosionResistance(1200).strength(1, 1200)) {
+            });
+    public static final RegistryObject<Block> SMORG_STAIRS = registerBlock("smorg_stairs",
+            ()-> new StairBlock(() -> ModBlocks.SMORGASBOARDS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.CHISELED_BOOKSHELF).strength(1, 1200)) {
+            });
+    public static final RegistryObject<Block> SMORG_SLAB = registerBlock("smorg_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.CHISELED_BOOKSHELF).strength(1, 1200)) {
+            });
+    public static final RegistryObject<Block> SMORG_WALL = registerBlock("smorg_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.CHISELED_BOOKSHELF).strength(1, 1200)) {
+            });
+    public static final RegistryObject<Block> SMORG_BUTTON = registerBlock("smorg_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.CHISELED_BOOKSHELF).noCollission().strength(1, 1200),
+                    BlockSetType.IRON, 2, true));
+    public static final RegistryObject<Block> SMORG_PRESSURE_PLATE = registerBlock("smorg_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.CHISELED_BOOKSHELF).noCollission().strength(1, 1200),
+                    BlockSetType.IRON));
+    public static final RegistryObject<Block> GLOW_CLOUD = registerBlock("glow_cloud",
+            ()-> new GlowClusterBlock(BlockBehaviour.Properties.copy(Blocks.COBWEB).lightLevel(state -> 14)) {
+            });
+
     //PLANTS AND FUNGI
     public static final RegistryObject<Block> CAVE_MUSHROOM = registerBlock("cave_mushroom",
             ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM), TreeFeatures.HUGE_RED_MUSHROOM) {
@@ -90,19 +119,114 @@ public class ModBlocks {
             });
     //WOOD
    public static final RegistryObject<Block> CAVE_STEM = registerBlock("cave_stem",
-            ()-> new LogBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM)) {
+            ()-> new LogBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(4)) {
             });
     public static final RegistryObject<Block> STRIPPED_CAVE_STEM = registerBlock("stripped_cave_stem",
             ()-> new LogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_WARPED_STEM)) {
             });
     public static final RegistryObject<Block> CAVE_HYPHAE = registerBlock("cave_hyphae",
-            ()-> new LogBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_HYPHAE)) {
+            ()-> new LogBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_HYPHAE).strength(4)) {
             });
     public static final RegistryObject<Block> STRIPPED_CAVE_HYPHAE = registerBlock("stripped_cave_hyphae",
             ()-> new LogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_WARPED_HYPHAE)) {
             });
+    public static final RegistryObject<Block> MUSHROOM_DOOR = registerBlock("mushroom_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_DOOR).noOcclusion(), BlockSetType.WARPED));
+    public static final RegistryObject<Block> MUSHROOM_TRAPDOOR = registerBlock("mushroom_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_TRAPDOOR).noOcclusion(), BlockSetType.WARPED));
+    public static final RegistryObject<Block> MUSHROOM_BUTTON = registerBlock("mushroom_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_BUTTON).noCollission(),
+                    BlockSetType.WARPED, 30, true));
+    public static final RegistryObject<Block> MUSHROOM_PRESSURE_PLATE = registerBlock("mushroom_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.WARPED_PRESSURE_PLATE).noCollission(),
+                    BlockSetType.WARPED));
 
+    public static final RegistryObject<Block> MUSHROOM_PLANKS = registerBlock("mushroom_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
 
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 35;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> MUSHROOM_SLAB = registerBlock("mushroom_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_SLAB)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 35;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> MUSHROOM_STAIRS = registerBlock("mushroom_stairs",
+            () -> new StairBlock(() -> ModBlocks.MUSHROOM_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.WARPED_STAIRS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 35;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> MUSHROOM_FENCE = registerBlock("mushroom_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 35;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> MUSHROOM_FENCE_GATE = registerBlock("mushroom_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 35;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+            });
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

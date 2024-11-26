@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "foundground:block/smorg_slab"
+    },
+    "type=double": {
+      "model": "foundground:block/smorgasboards"
+    },
+    "type=top": {
+      "model": "foundground:block/smorg_slab_top"
+    }
+  }
+}
