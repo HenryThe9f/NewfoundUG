@@ -15,6 +15,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
+        //blockWithItem(ModBlocks.THORN_VINES);
+        blockWithItem(ModBlocks.PETRIFIED_ROOT);
+
+
+        //yet more old stuff DO NOT RUN DATAGEN IT WILL FUCK YOUR SHIT UP
         //blockWithItem();
         //blockWithItem(((HugeMushroomBlock) ModBlocks.DEEP_MUSHROOM_CAP.get()), blockTexture(ModBlocks.DEEP_MUSHROOM_CAP.get()));
         //SMORGASBOARD STUFF
@@ -34,6 +40,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         pressurePlateBlock(((PressurePlateBlock) ModBlocks.MUSHROOM_PRESSURE_PLATE.get()), blockTexture(ModBlocks.MUSHROOM_PLANKS.get()));
         fenceBlock(((FenceBlock) ModBlocks.MUSHROOM_FENCE.get()), blockTexture(ModBlocks.MUSHROOM_PLANKS.get()));
         fenceGateBlock(((FenceGateBlock) ModBlocks.MUSHROOM_FENCE_GATE.get()), blockTexture(ModBlocks.MUSHROOM_PLANKS.get()));
+
+        blockWithItem(ModBlocks.CASTLE_GATE);
 //OTHER
         //blockWithItem(ModBlocks.GLOW_CLOUD);
 

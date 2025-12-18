@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=true": {
+      "model": "foundground:block/thorn_vines_tip"
+    },
+    "bottom=false": {
+      "model": "foundground:block/thorn_vines"
+    }
+  }
+}

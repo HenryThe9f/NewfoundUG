@@ -3,8 +3,11 @@ package net.HenryThe9f.foundground.block;
 import net.HenryThe9f.foundground.Newfound_Underground;
 import net.HenryThe9f.foundground.block.custom.*;
 import net.HenryThe9f.foundground.item.Moditems;
+import net.HenryThe9f.foundground.worldgen.ModConfiguredFeatures;
+import net.HenryThe9f.foundground.worldgen.tree.CaveMushroomGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
@@ -26,8 +29,35 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 public class ModBlocks {
 
+
+
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Newfound_Underground.MODID);
+    public static final RegistryObject<Block> THORN_VINES = registerBlock("thorn_vines",
+            ()-> new ThornVineBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)) {
+            });
+    public static final RegistryObject<Block> PETRIFIED_ROOT = registerBlock("petrified_root",
+            ()-> new PetrifiedBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_TERRACOTTA)) {
+            });
+    public static final RegistryObject<Block> FRAGILE_ROOTED_STONE = registerBlock("fragile_rooted_stone",
+            ()-> new FragileBlock(BlockBehaviour.Properties.copy(Blocks.STONE)) {
+            });
+    public static final RegistryObject<Block> FRAGILE_ROOTED_DEEPSLATE = registerBlock("fragile_rooted_deepslate",
+            ()-> new FragileBlock(BlockBehaviour.Properties.copy(Blocks.STONE)) {
+            });
+    public static final RegistryObject<Block> RAW_IRON_ROSE = registerBlock("raw_iron_rose",
+            ()-> new RawIronRoseBlock(BlockBehaviour.Properties.copy(Blocks.HANGING_ROOTS)) {
+            });
+    public static final RegistryObject<Block> ROOT_IRON_ORE = registerBlock("root_iron_ore",
+            ()-> new SpiderInfestedBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)) {
+            });
+
+
+    ///EVERYTHING BELOW HERE IS OLD
+    //STUPID IDIOT TESTING SHIT
+    public static final RegistryObject<Block> CASTLE_GATE = registerBlock("castle_gate",
+            ()-> new CastleGateBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)) {
+            });
 
     //HUGE MUSHROOM BLOCKS
     public static final RegistryObject<Block> DEEP_MUSHROOM_CAP = registerBlock("deep_mushroom_cap",
@@ -88,7 +118,7 @@ public class ModBlocks {
 
     //PLANTS AND FUNGI
     public static final RegistryObject<Block> CAVE_MUSHROOM = registerBlock("cave_mushroom",
-            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM), TreeFeatures.HUGE_RED_MUSHROOM) {
+            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM), FeatureUtils.createKey("crimson_fungus")) {
             });
     public static final RegistryObject<Block> DEEP_MUSHROOM = registerBlock("deep_mushroom",
             ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5), TreeFeatures.HUGE_RED_MUSHROOM) {

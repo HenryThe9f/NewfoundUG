@@ -1,23 +1,52 @@
-[20Nov2024 19:00:03.170] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Henry\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, foundground, --all, --output, C:\Users\Henry\Downloads\NewfoundUG\src\generated\resources, --existing, C:\Users\Henry\Downloads\NewfoundUG\src\main\resources]
-[20Nov2024 19:00:03.181] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.9 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
-[20Nov2024 19:00:03.273] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[20Nov2024 19:00:03.307] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Henry/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[20Nov2024 19:00:03.506] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[20Nov2024 19:00:03.508] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[20Nov2024 19:00:03.510] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[20Nov2024 19:00:03.513] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
-[20Nov2024 19:00:03.565] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[20Nov2024 19:00:04.455] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Henry\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, foundground, --all, --output, C:\Users\Henry\Downloads\NewfoundUG\src\generated\resources, --existing, C:\Users\Henry\Downloads\NewfoundUG\src\main\resources]
-[20Nov2024 19:00:04.766] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [foundground]
-[20Nov2024 19:00:07.447] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
-[20Nov2024 19:00:07.450] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
-[20Nov2024 19:00:07.833] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Henry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[20Nov2024 19:00:07.834] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Henry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[20Nov2024 19:00:08.013] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: foundground
-[20Nov2024 19:00:08.163] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: foundground finished after 149 ms
-[20Nov2024 19:00:08.163] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: foundground
-[20Nov2024 19:00:08.166] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: foundground finished after 1 ms
-[20Nov2024 19:00:08.166] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id foundground
-[20Nov2024 19:00:08.188] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id foundground finished after 21 ms
-[20Nov2024 19:00:08.188] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 174 ms
-[20Nov2024 19:00:08.197] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 81, old count: 78, new count: 82, removed stale: 0, written: 4
+[15Dec2025 19:02:19.986] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Henry\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, foundground, --all, --output, C:\Users\Henry\Downloads\NewfoundUG\src\generated\resources, --existing, C:\Users\Henry\Downloads\NewfoundUG\src\main\resources, --mixin.config, mixins.foundground.json]
+[15Dec2025 19:02:19.999] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.9 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[15Dec2025 19:02:20.288] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[15Dec2025 19:02:20.371] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Henry/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[15Dec2025 19:02:20.923] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[15Dec2025 19:02:20.926] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[15Dec2025 19:02:20.929] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[15Dec2025 19:02:20.933] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Henry\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
+[15Dec2025 19:02:21.205] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[15Dec2025 19:02:23.536] [main/WARN] [mixin/]: Compatibility level JAVA_17 specified by mixins.foundground.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[15Dec2025 19:02:23.537] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[15Dec2025 19:02:23.537] [main/ERROR] [mixin/]: Mixin config mixins.foundground.json does not specify "minVersion" property
+[15Dec2025 19:02:23.543] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Henry\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, foundground, --all, --output, C:\Users\Henry\Downloads\NewfoundUG\src\generated\resources, --existing, C:\Users\Henry\Downloads\NewfoundUG\src\main\resources]
+[15Dec2025 19:02:23.645] [main/INFO] [mixin/]: Attempting to load Fernflower decompiler (Threaded mode)
+[15Dec2025 19:02:23.646] [main/INFO] [mixin/]: Fernflower could not be loaded, exported classes will not be decompiled. NoClassDefFoundError: org/jetbrains/java/decompiler/main/extern/IResultSaver
+[15Dec2025 19:02:23.659] [main/INFO] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT]
+[15Dec2025 19:02:23.659] [main/INFO] [mixin/]: Selecting config mixins.foundground.json
+[15Dec2025 19:02:23.663] [main/INFO] [mixin/]: Selecting config terrablender.mixins.json
+[15Dec2025 19:02:24.045] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\Henry\Downloads\NewfoundUG\build\createSrgToMcp\output.srg
+[15Dec2025 19:02:24.045] [main/INFO] [mixin/]: Selecting config terrablender_forge.mixins.json
+[15Dec2025 19:02:24.047] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\Henry\Downloads\NewfoundUG\build\createSrgToMcp\output.srg
+[15Dec2025 19:02:24.047] [main/INFO] [mixin/]: Preparing mixins.foundground.json (1)
+[15Dec2025 19:02:24.227] [main/INFO] [mixin/]: Preparing terrablender.mixins.json (7)
+[15Dec2025 19:02:24.277] [main/INFO] [mixin/]: Preparing terrablender_forge.mixins.json (0)
+[15Dec2025 19:02:24.383] [main/INFO] [mixin/]: Prepared 8 mixins in 0.724 sec (90.5ms avg) (0ms load, 0ms transform, 0ms plugin)
+[15Dec2025 19:02:25.836] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [foundground]
+[15Dec2025 19:02:25.873] [main/INFO] [mixin/]: Mixing MixinBuiltInRegistries from terrablender.mixins.json into net.minecraft.core.registries.BuiltInRegistries
+[15Dec2025 19:02:25.882] [main/INFO] [mixin/]: Renaming synthetic method lambda$registerSimple$0(Lnet/minecraft/core/registries/BuiltInRegistries$RegistryBootstrap;Lnet/minecraft/core/Registry;)Ljava/lang/Object; to md69f0a2$lambda$registerSimple$0$0 in terrablender.mixins.json:MixinBuiltInRegistries
+[15Dec2025 19:02:32.584] [main/INFO] [mixin/]: Mixing SkeletonPunchMixin from mixins.foundground.json into net.minecraft.world.entity.ai.goal.RangedBowAttackGoal
+[15Dec2025 19:02:32.587] [main/WARN] [mixin/]: @Shadow target mixins.foundground.json:SkeletonPunchMixin::mob is final but shadow is not decorated with @Final
+[15Dec2025 19:02:35.350] [main/INFO] [mixin/]: Mixing MixinBiomeSource from terrablender.mixins.json into net.minecraft.world.level.biome.BiomeSource
+[15Dec2025 19:02:35.351] [main/INFO] [mixin/]: Renaming synthetic method lambda$appendDeferredBiomesList$0(Lcom/google/common/collect/ImmutableList;)Ljava/util/Set; to md69f0a2$lambda$appendDeferredBiomesList$0$0 in terrablender.mixins.json:MixinBiomeSource
+[15Dec2025 19:02:35.471] [main/INFO] [mixin/]: Mixing MixinMultiNoiseBiomeSource from terrablender.mixins.json into net.minecraft.world.level.biome.MultiNoiseBiomeSource
+[15Dec2025 19:02:35.503] [main/INFO] [mixin/]: Mixing MixinParameterList from terrablender.mixins.json into net.minecraft.world.level.biome.Climate$ParameterList
+[15Dec2025 19:02:35.504] [main/INFO] [mixin/]: Renaming synthetic method lambda$initializeForTerraBlender$0(Lcom/google/common/collect/ImmutableList$Builder;Lnet/minecraft/core/Registry;Lcom/mojang/datafixers/util/Pair;)V to md69f0a2$lambda$initializeForTerraBlender$0$0 in terrablender.mixins.json:MixinParameterList
+[15Dec2025 19:02:35.597] [main/INFO] [mixin/]: Mixing MixinNoiseGeneratorSettings from terrablender.mixins.json into net.minecraft.world.level.levelgen.NoiseGeneratorSettings
+[15Dec2025 19:02:35.599] [main/WARN] [mixin/]: @Shadow target terrablender.mixins.json:MixinNoiseGeneratorSettings::surfaceRule is final but shadow is not decorated with @Final
+[15Dec2025 19:02:36.626] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
+[15Dec2025 19:02:36.632] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
+[15Dec2025 19:02:36.719] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
+[15Dec2025 19:02:36.720] [modloading-worker-0/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
+[15Dec2025 19:02:36.720] [modloading-worker-0/INFO] [terrablender/]: Registered region foundground:overworld to index 1 for type OVERWORLD
+[15Dec2025 19:02:37.900] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Henry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[15Dec2025 19:02:37.901] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Henry/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[15Dec2025 19:02:38.266] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: foundground
+[15Dec2025 19:02:38.767] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: foundground finished after 499 ms
+[15Dec2025 19:02:38.767] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: foundground
+[15Dec2025 19:02:38.778] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: foundground finished after 10 ms
+[15Dec2025 19:02:38.778] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id foundground
+[15Dec2025 19:02:38.837] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id foundground finished after 58 ms
+[15Dec2025 19:02:38.837] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 572 ms
+[15Dec2025 19:02:38.873] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 94, old count: 78, new count: 83, removed stale: 12, written: 5

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "foundground:block/raw_iron_rose_placeable"
+  }
+}

@@ -5,10 +5,13 @@ import net.HenryThe9f.foundground.block.ModBlocks;
 import net.HenryThe9f.foundground.entity.ModEntities;
 import net.HenryThe9f.foundground.item.ModCreativeModeTabs;
 import net.HenryThe9f.foundground.item.Moditems;
+import net.HenryThe9f.foundground.worldgen.biome.ModTerrablender;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterDimensionSpecialEffectsEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -40,6 +43,7 @@ public class Newfound_Underground
         Moditems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModTerrablender.registerBiomes();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -73,6 +77,12 @@ public class Newfound_Underground
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
+   // @SubscribeEvent
+    //public static void registerDimensionEffects(final RegisterDimensionSpecialEffectsEvent event) {
+    //    event.register(Newfound_Underground.DIMENSION_EFFECTS, new DimensionSpecialEffects.NetherEffects());
+
+   // }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

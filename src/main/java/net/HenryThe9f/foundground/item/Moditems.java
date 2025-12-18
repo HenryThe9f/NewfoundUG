@@ -2,6 +2,7 @@ package net.HenryThe9f.foundground.item;
 
 import net.HenryThe9f.foundground.Newfound_Underground;
 import net.HenryThe9f.foundground.item.custom.GoldSporeItem;
+import net.HenryThe9f.foundground.item.custom.IcePickItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,7 +14,7 @@ public class Moditems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Newfound_Underground.MODID);
 
     public static final RegistryObject<Item> GOLD_SPORES = ITEMS.register("gold_spores", ()->new GoldSporeItem(new Item.Properties()));
-
+    public static final RegistryObject<Item> ICE_PICK = ITEMS.register("ice_pick", ()->new IcePickItem(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

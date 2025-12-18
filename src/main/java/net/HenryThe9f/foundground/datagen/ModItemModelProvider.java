@@ -19,8 +19,18 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+
+       SimpleBlockItem(ModBlocks.PETRIFIED_ROOT);
+       SimpleBlockItem(ModBlocks.THORN_VINES);
+
+
+
+
+
+       //old crap oncemore
         SimpleButtonItem(ModBlocks.SMORG_BUTTON, ModBlocks.SMORGASBOARDS);
         SimpleWallItem(ModBlocks.SMORG_WALL, ModBlocks.SMORGASBOARDS);
+
 
         SimpleBlockItem(ModBlocks.SMORG_STAIRS);
         SimpleBlockItem(ModBlocks.SMORG_SLAB);
@@ -33,7 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         SimpleBlockItem(ModBlocks.MUSHROOM_STAIRS);
         SimpleBlockItem(ModBlocks.MUSHROOM_PRESSURE_PLATE);
 
-
+        SimpleBlockItem(ModBlocks.CASTLE_GATE);
 
     }
     private ItemModelBuilder SimpleItem(RegistryObject<Item> item) {
