@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "foundground:block/japebox",
+    "down": "foundground:block/japebox",
+    "up": "foundground:block/japebox_top",
+    "north": "foundground:block/japebox",
+    "east": "foundground:block/japebox",
+    "south": "foundground:block/japebox",
+    "west": "foundground:block/japebox"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "foundground:block/iron_rooted_deepslate_top",
+    "side": "foundground:block/iron_rooted_deepslate"
+  }
+}

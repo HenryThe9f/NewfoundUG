@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "foundground:block/bedrock_fungus_cap"
+  }
+}

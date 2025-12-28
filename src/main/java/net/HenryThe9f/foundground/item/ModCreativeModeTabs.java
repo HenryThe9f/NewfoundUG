@@ -16,50 +16,51 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Newfound_Underground.MODID);
 
     public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.DEEP_MUSHROOM.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.CYAN_MUSHROOM.get()))
                     .title(Component.translatable("creativetab.tutorial_tab"))
                     .displayItems((pParameters, pOutput) -> {
 
-                        pOutput.accept(ModBlocks.STONE_MYCELIUM.get());
-                        pOutput.accept(ModBlocks.DEEP_MYCELIUM.get());
-                        pOutput.accept(ModBlocks.CAVE_MUSHROOM_CAP .get());
-                        pOutput.accept(ModBlocks.DEEP_MUSHROOM_CAP.get());
-                        pOutput.accept(ModBlocks.PALE_MUSHROOM_CAP .get());
-                        pOutput.accept(ModBlocks.CYAN_MUSHROOM_CAP.get());
-                        pOutput.accept(ModBlocks.CAVE_STEM .get());
-                        pOutput.accept(ModBlocks.STRIPPED_CAVE_STEM .get());
-                        pOutput.accept(ModBlocks.CAVE_HYPHAE .get());
-                        pOutput.accept(ModBlocks.STRIPPED_CAVE_HYPHAE .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_PLANKS .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_SLAB .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_STAIRS .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_FENCE .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_FENCE_GATE .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_BUTTON .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_PRESSURE_PLATE .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_DOOR .get());
-                        pOutput.accept(ModBlocks.MUSHROOM_TRAPDOOR .get());
-                        pOutput.accept(ModBlocks.CAVE_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.DEEP_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.PALE_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.CYAN_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.TALL_CAVE_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.TALL_DEEP_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.TALL_PALE_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.TALL_CYAN_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.LEAD_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.GOLD_MUSHROOM .get());
-                        pOutput.accept(ModBlocks.GOLD_LAUNCHER.get());
-                        pOutput.accept(ModBlocks.SHROOMITE_LAUNCHER .get());
-                        pOutput.accept(ModBlocks.SMORGASBOARDS.get());
-                        pOutput.accept(ModBlocks.SMORGLASS .get());
-                        pOutput.accept(ModBlocks.SMORGLASS_PANE .get());
-                        pOutput.accept(ModBlocks.SMORG_SLAB .get());
-                        pOutput.accept(ModBlocks.SMORG_STAIRS .get());
-                        pOutput.accept(ModBlocks.SMORG_WALL .get());
-                        pOutput.accept(ModBlocks.SMORG_BUTTON .get());
-                        pOutput.accept(ModBlocks.SMORG_PRESSURE_PLATE .get());
-                        pOutput.accept(Moditems.GOLD_SPORES .get());
+                        pOutput.accept(ModBlocks.PETRIFIED_ROOT.get());
+                        pOutput.accept(ModBlocks.THORN_VINES.get());
+                        pOutput.accept(ModBlocks.ROOT_IRON_ORE.get());
+                        pOutput.accept(ModBlocks.RAW_IRON_ROSE.get());
+                        pOutput.accept(Moditems.RAW_IRON_ROSE_ITEM.get());
+                        pOutput.accept(ModBlocks.IRON_ROSE.get());
+                        pOutput.accept(ModBlocks.FRAGILE_ROOTED_STONE.get());
+                        pOutput.accept(ModBlocks.FRAGILE_ROOTED_DEEPSLATE.get());
+                        pOutput.accept(ModBlocks.IRON_ROOTED_STONE.get());
+                        pOutput.accept(ModBlocks.IRON_ROOTED_DEEPSLATE.get());
+                        pOutput.accept(ModBlocks.IRON_ROOTED_NETHERRACK.get());
+                        pOutput.accept(ModBlocks.IRON_ROOTED_END_STONE.get());
+                        pOutput.accept(ModBlocks.WHELP_FUR.get());
+                        pOutput.accept(ModBlocks.WHELP_FUR_CARPET.get());
+                        pOutput.accept(Moditems.RAW_WHELP.get());
+                        pOutput.accept(Moditems.COOKED_WHELP.get());
+                        pOutput.accept(Moditems.WHELP_TORCH.get());
+                        pOutput.accept(ModBlocks.BURNING_FUR.get());
+                        pOutput.accept(Moditems.WHELP_SPAWN_EGG.get());
+                        pOutput.accept(ModBlocks.JAPEBOX.get());
+
+                        pOutput.accept(Moditems.GOLD_SPORES.get());
+                        pOutput.accept(Moditems.BLINDING_STEW.get());
+                        pOutput.accept(ModBlocks.BEDROCK_FUNGUS_STEM.get());
+                        pOutput.accept(ModBlocks.BEDROCK_FUNGUS_CAP.get());
+                        pOutput.accept(ModBlocks.LAPIS_BEDROCK_FUNGUS_CAP.get());
+
+                        pOutput.accept(ModBlocks.CYANSTONE.get());
+                        pOutput.accept(ModBlocks.CYAN_MUSHROOM.get());
+                        pOutput.accept(ModBlocks.LAPIS_LANTERN.get());
+                        pOutput.accept(ModBlocks.SMOOTH_LAPIS.get());
+                        pOutput.accept(ModBlocks.SMOOTH_LAPIS_SLAB.get());
+                        pOutput.accept(ModBlocks.SMOOTH_LAPIS_STAIRS.get());
+                        pOutput.accept(ModBlocks.SMOOTH_LAPIS_WALL.get());
+                        pOutput.accept(ModBlocks.CUT_LAPIS.get());
+                        pOutput.accept(ModBlocks.CUT_LAPIS_SLAB.get());
+                        pOutput.accept(ModBlocks.CUT_LAPIS_STAIRS.get());
+                        pOutput.accept(ModBlocks.CUT_LAPIS_WALL.get());
+
+
+
 
                     })
                     .build());

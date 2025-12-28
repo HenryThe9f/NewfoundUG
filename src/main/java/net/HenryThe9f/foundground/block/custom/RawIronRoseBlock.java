@@ -27,7 +27,7 @@ public class RawIronRoseBlock extends HangingRootsBlock {
                 for (int k = -4; k < 5; k++) {
                     if (pRand.nextInt(10) == 0 && pLevel.getBlockState((pPos.offset(i, j, k))).is(ModBlocks.PETRIFIED_ROOT.get())) {
                         pLevel.setBlockAndUpdate(pPos.offset(i, j, k), ModBlocks.ROOT_IRON_ORE.get().defaultBlockState());
-                        pLevel.sendParticles(ParticleTypes.FLASH, (double)pPos.getX(), (double)pPos.getY(), (double)pPos.getZ(),1, 0.0, 0.0, 0.0, 0);
+                        pLevel.sendParticles(ParticleTypes.FLASH, (double)pPos.getX()+i, (double)pPos.getY()+j-0.5, (double)pPos.getZ()+k,1, 0.0, 0.0, 0.0, 0);
                     }
                 }
             }

@@ -46,15 +46,116 @@ public class ModBlocks {
             ()-> new FragileBlock(BlockBehaviour.Properties.copy(Blocks.STONE)) {
             });
     public static final RegistryObject<Block> RAW_IRON_ROSE = registerBlock("raw_iron_rose",
-            ()-> new RawIronRoseBlock(BlockBehaviour.Properties.copy(Blocks.HANGING_ROOTS)) {
+            ()-> new RawIronRoseBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)) {
+            });
+    public static final RegistryObject<Block> IRON_ROSE = registerBlock("iron_rose",
+            ()-> new IronRoseBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)) {
             });
     public static final RegistryObject<Block> ROOT_IRON_ORE = registerBlock("root_iron_ore",
             ()-> new SpiderInfestedBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)) {
             });
 
+    public static final RegistryObject<Block> IRON_ROOTED_STONE = registerBlock("iron_rooted_stone",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)) {
+            });
+    public static final RegistryObject<Block> CYANSTONE = registerBlock("cyanstone",
+            ()-> new CyanStoneBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).lightLevel(state -> 5)) {
+            });
+
+    public static final RegistryObject<Block> IRON_ROOTED_DEEPSLATE = registerBlock("iron_rooted_deepslate",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)) {
+            });
+
+    public static final RegistryObject<Block> IRON_ROOTED_NETHERRACK = registerBlock("iron_rooted_netherrack",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)) {
+            });
+
+    public static final RegistryObject<Block> IRON_ROOTED_END_STONE = registerBlock("iron_rooted_end_stone",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)) {
+            });
+    public static final RegistryObject<Block> BURNING_FUR = registerBlock("burning_fur",
+            ()-> new BurningFurBlock(BlockBehaviour.Properties.copy(Blocks.TORCH).sound(SoundType.WOOL)) {
+            });
+    public static final RegistryObject<Block> JAPEBOX = registerBlock("japebox",
+            ()-> new FrozenWhelpBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX)) {
+            });
+    public static final RegistryObject<Block> LAPIS_LANTERN = registerBlock("lapis_lantern",
+            ()-> new LapisEffectBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.DEEPSLATE_BRICKS).noOcclusion()) {
+            });
+    public static final RegistryObject<Block> BEDROCK_FUNGUS_STEM = registerBlock("bedrock_fungus_stem",
+            ()-> new BedrockFungusStemBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion()) {
+            });
+    public static final RegistryObject<Block> BEDROCK_FUNGUS_CAP = registerBlock("bedrock_fungus_cap",
+            ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON)) {
+            });
+    public static final RegistryObject<Block> LAPIS_BEDROCK_FUNGUS_CAP = registerBlock("lapis_bedrock_fungus_cap",
+            ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON)) {
+            });
+    public static final RegistryObject<Block> WHELP_FUR = registerBlock("whelp_fur",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)) {  @Override
+            public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                return true;
+            }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 50;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 50;
+                }
+            });
+    public static final RegistryObject<Block> WHELP_FUR_CARPET = registerBlock("whelp_fur_carpet",
+            ()-> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET)) {  @Override
+            public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                return true;
+            }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 50;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 50;
+                }
+            });
+    public static final RegistryObject<Block> SMOOTH_LAPIS = registerBlock("smooth_lapis",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+    public static final RegistryObject<Block> CUT_LAPIS = registerBlock("cut_lapis",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+    public static final RegistryObject<Block> SMOOTH_LAPIS_STAIRS = registerBlock("smooth_lapis_stairs",
+            ()-> new StairBlock(() -> ModBlocks.SMOOTH_LAPIS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+    public static final RegistryObject<Block> SMOOTH_LAPIS_SLAB = registerBlock("smooth_lapis_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+    public static final RegistryObject<Block> SMOOTH_LAPIS_WALL = registerBlock("smooth_lapis_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+    public static final RegistryObject<Block> CUT_LAPIS_STAIRS = registerBlock("cut_lapis_stairs",
+            ()-> new StairBlock(() -> ModBlocks.CUT_LAPIS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+    public static final RegistryObject<Block> CUT_LAPIS_SLAB = registerBlock("cut_lapis_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+    public static final RegistryObject<Block> CUT_LAPIS_WALL = registerBlock("cut_lapis_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
+            });
+
+    public static final RegistryObject<Block> CYAN_MUSHROOM = registerBlock("cyan_mushroom",
+            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5), TreeFeatures.HUGE_RED_MUSHROOM) {
+            });
 
     ///EVERYTHING BELOW HERE IS OLD
-    //STUPID IDIOT TESTING SHIT
+
     public static final RegistryObject<Block> CASTLE_GATE = registerBlock("castle_gate",
             ()-> new CastleGateBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)) {
             });
@@ -126,9 +227,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PALE_MUSHROOM = registerBlock("pale_mushroom",
             ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM), TreeFeatures.HUGE_RED_MUSHROOM) {
             });
-    public static final RegistryObject<Block> CYAN_MUSHROOM = registerBlock("cyan_mushroom",
-            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5), TreeFeatures.HUGE_RED_MUSHROOM) {
-            });
+
     public static final RegistryObject<Block> TALL_CAVE_MUSHROOM = registerBlock("tall_cave_mushroom",
             ()-> new TallMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)) {
             });

@@ -22,6 +22,8 @@
     "foundground:cave_mushroom_cap",
     "foundground:pale_mushroom_cap",
     "foundground:cyan_mushroom_cap",
-    "foundground:cave_hyphae"
+    "foundground:cave_hyphae",
+    "foundground:japebox",
+    "foundground:bedrock_fungus_cap"
   ]
 }
