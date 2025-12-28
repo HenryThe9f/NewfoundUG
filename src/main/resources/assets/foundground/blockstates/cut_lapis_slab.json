@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "foundground:block/cut_lapis_slab"
+    },
+    "type=double": {
+      "model": "foundground:block/cut_lapis"
+    },
+    "type=top": {
+      "model": "foundground:block/cut_lapis_slab_top"
+    }
+  }
+}
