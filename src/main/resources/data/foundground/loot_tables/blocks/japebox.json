@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_11",
+          "weight": 1,
+          "conditions": [],
+          "functions": []
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:air",
+          "weight": 5
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/brown_mushroom_block"
+}

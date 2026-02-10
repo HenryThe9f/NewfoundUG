@@ -1,6 +1,7 @@
 package net.HenryThe9f.foundground.block.custom;
 
 import net.HenryThe9f.foundground.block.ModBlocks;
+import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
@@ -37,7 +38,7 @@ public class IronRoseBlock extends HangingRootsBlock {
 
     public IronRoseBlock(Properties pProperties) {
         super(pProperties);
-        this.registerDefaultState((BlockState)((BlockState)((BlockState) this.stateDefinition.any()).setValue(LEVEL, 1)).setValue(WATERLOGGED, false));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState) this.stateDefinition.any()).setValue(LEVEL, 7)).setValue(WATERLOGGED, false));
 
     }
     @Nullable
@@ -61,7 +62,7 @@ public class IronRoseBlock extends HangingRootsBlock {
             return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
         } else {
             this.Rootmaker(pState, pLevel, pPos, pRand);
-            pLevel.setBlock(pPos, pState.setValue(LEVEL, Mth.clamp(pState.getValue(LEVEL)+1, 1,10)), 2);
+            pLevel.setBlock(pPos, pState.setValue(LEVEL, Mth.clamp(pState.getValue(LEVEL)+1, 1,15)), 2);
             Item item = itemstack.getItem();
             if (!pPlayer.isCreative()) {
                     itemstack.shrink(1);
@@ -77,9 +78,17 @@ public class IronRoseBlock extends HangingRootsBlock {
     public void Rootmaker(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRand) {
         for(int i = -pState.getValue(LEVEL); i <= pState.getValue(LEVEL); i++){
             for(int j = -pState.getValue(LEVEL); j <= pState.getValue(LEVEL); j++) {
-                for(int k = -pState.getValue(LEVEL); k <= pState.getValue(LEVEL); k++) {
-                    if (!pLevel.isClientSide && pRand.nextInt(6) == 0 && pLevel.getBlockState((pPos.offset(i, j, k))).is(Tags.Blocks.STONE) && sqrt(pow(i, 2)+pow(j, 2)+pow(k, 2)) <= pState.getValue(LEVEL)+1) {
-                        pLevel.setBlockAndUpdate(pPos.offset(i, j, k), ModBlocks.PETRIFIED_ROOT.get().defaultBlockState());
+                for(int k = -pState.getValue(LEVEL); k <= pState.getValue(LEVEL); k++) {//replace this later
+                    if (!pLevel.isClientSide && pRand.nextInt(6) == 0 && sqrt(pow(i, 2)+pow(j, 2)+pow(k, 2)) <= pState.getValue(LEVEL)+1) {
+                        if(pLevel.getBlockState((pPos.offset(i, j, k))).is(ModTags.Blocks.STONE_ROOTABLE)) {//note to self: should prob not do it like this
+                            pLevel.setBlockAndUpdate(pPos.offset(i, j, k), ModBlocks.IRON_ROOTED_STONE.get().defaultBlockState());
+                        } else if(pLevel.getBlockState((pPos.offset(i, j, k))).is(ModTags.Blocks.DEEPSLATE_ROOTABLE)) {
+                            pLevel.setBlockAndUpdate(pPos.offset(i, j, k), ModBlocks.IRON_ROOTED_DEEPSLATE.get().defaultBlockState());
+                        }else if(pLevel.getBlockState((pPos.offset(i, j, k))).is(ModTags.Blocks.NETHER_ROOTABLE)) {
+                            pLevel.setBlockAndUpdate(pPos.offset(i, j, k), ModBlocks.IRON_ROOTED_NETHERRACK.get().defaultBlockState());
+                        }else if(pLevel.getBlockState((pPos.offset(i, j, k))).is(ModTags.Blocks.END_ROOTABLE)) {
+                            pLevel.setBlockAndUpdate(pPos.offset(i, j, k), ModBlocks.IRON_ROOTED_END_STONE.get().defaultBlockState());
+                        }
                     }
                 }
             }

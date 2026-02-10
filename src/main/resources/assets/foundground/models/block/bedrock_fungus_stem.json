@@ -1,6 +1,25 @@
 {
-  "parent": "minecraft:block/template_wall_post",
+  "format_version": "1.9.0",
+  "credit": "Made with Blockbench",
+  "render_type": "minecraft:cutout",
+  "texture_size": [12, 12],
   "textures": {
-    "wall": "foundground:block/bedrock_fungus_stem"
-  }
+    "0": "foundground:block/bedrock_fungus_stem",
+    "particle": "foundground:block/bedrock_fungus_stem"
+  },
+  "elements": [
+    {
+      "from": [1, 0, 1],
+      "to": [15, 16, 15],
+      "rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 1]},
+      "faces": {
+        "north": {"uv": [1, 0, 15, 16], "texture": "#0"},
+        "east": {"uv": [1, 0, 15, 16], "texture": "#0"},
+        "south": {"uv": [1, 0, 15, 16], "texture": "#0"},
+        "west": {"uv": [1, 0, 15, 16], "texture": "#0"},
+        "up": {"uv": [1, 1, 15, 15], "texture": "#0"},
+        "down": {"uv": [1, 1, 15, 15], "texture": "#0"}
+      }
+    }
+  ]
 }

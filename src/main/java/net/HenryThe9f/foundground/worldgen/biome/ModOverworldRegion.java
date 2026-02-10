@@ -23,7 +23,7 @@ public class ModOverworldRegion extends Region{
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
            modifiedVanillaOverworldBuilder.replaceBiome(Biomes.LUSH_CAVES, ModBiomes.ROOTS_BIOME);
             VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-            /* from terrablender github. Man i hope this works
+            /* from terrablender github. going to try and tweak this later
             new ParameterUtils.ParameterPointListBuilder()
                     .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.FROZEN))
                     .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY))

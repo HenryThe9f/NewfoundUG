@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "X": {
+      "item": "minecraft:disc_fragment_5"
+    },
+    "F": {
+      "item": "foundground:whelp_fur"
+    }
+  },
+  "pattern": [
+    "F#F",
+    "#X#",
+    "F#F"
+  ],
+  "result": {
+    "item": "foundground:japebox"
+  },
+  "show_notification": true
+}

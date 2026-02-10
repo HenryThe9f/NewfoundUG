@@ -19,7 +19,7 @@ public class SmorglassBlock extends AbstractGlassBlock {
     public void animateTick(BlockState p_221789_, Level p_221790_, BlockPos p_221791_, RandomSource p_221792_) {
         super.animateTick(p_221789_, p_221790_, p_221791_, p_221792_);
         if (p_221792_.nextInt(1) == 0) {
-            p_221790_.addParticle(ParticleTypes.MYCELIUM, (double)p_221791_.getX() + p_221792_.nextDouble(), (double)p_221791_.getY() + p_221792_.nextDouble(), (double)p_221791_.getZ() + p_221792_.nextDouble(), 0.0, 0.0, 0.0);
+            p_221790_.addParticle(ParticleTypes.DOLPHIN, (double)p_221791_.getX() + p_221792_.nextDouble(), (double)p_221791_.getY() + p_221792_.nextDouble(), (double)p_221791_.getZ() + p_221792_.nextDouble(), 0.0, 0.0, 0.0);
         }
 
     }

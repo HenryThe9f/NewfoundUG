@@ -8,6 +8,7 @@ import net.HenryThe9f.foundground.entity.client.WhelpRenderer;
 import net.HenryThe9f.foundground.entity.custom.GoldSporeEntity;
 import net.HenryThe9f.foundground.item.ModCreativeModeTabs;
 import net.HenryThe9f.foundground.item.Moditems;
+import net.HenryThe9f.foundground.sound.ModSounds;
 import net.HenryThe9f.foundground.worldgen.biome.ModTerrablender;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
@@ -21,7 +22,9 @@ import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterDimensionSpecialEffectsEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -57,6 +60,7 @@ public class Newfound_Underground
         ModEntities.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModTerrablender.registerBiomes();
+        ModSounds.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -74,6 +78,10 @@ public class Newfound_Underground
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CYAN_MUSHROOM.getId(), ModBlocks.POTTED_CYAN_MUSHROOM);
+        });
+
 
         DispenserBlock.registerBehavior(Moditems.GOLD_SPORES.get(), new AbstractProjectileDispenseBehavior() {
             protected Projectile getProjectile(Level p_123476_, Position p_123477_, ItemStack p_123478_) {

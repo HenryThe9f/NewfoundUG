@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "foundground:bedrock_fungus",
+  "step": "vegetal_decoration"
+}

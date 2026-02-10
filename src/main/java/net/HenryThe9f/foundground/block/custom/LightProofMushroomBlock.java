@@ -17,6 +17,7 @@ public class LightProofMushroomBlock extends MushroomBlock {
     public LightProofMushroomBlock(Properties pProperties, ResourceKey<ConfiguredFeature<?, ?>> pFeature) {
         super(pProperties, pFeature);
     }
+
    @Override public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         BlockPos blockpos = pPos.below();
         BlockState blockstate = pLevel.getBlockState(blockpos);

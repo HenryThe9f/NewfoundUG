@@ -4,11 +4,13 @@ import net.HenryThe9f.foundground.Newfound_Underground;
 import net.HenryThe9f.foundground.block.custom.*;
 import net.HenryThe9f.foundground.item.Moditems;
 import net.HenryThe9f.foundground.worldgen.ModConfiguredFeatures;
-import net.HenryThe9f.foundground.worldgen.tree.CaveMushroomGrower;
+import net.HenryThe9f.foundground.worldgen.tree.CyanMushroomGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -17,9 +19,12 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.HugeBrownMushroomFeature;
 import net.minecraft.world.level.levelgen.feature.HugeRedMushroomFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,14 +35,13 @@ import java.util.function.Supplier;
 public class ModBlocks {
 
 
-
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Newfound_Underground.MODID);
     public static final RegistryObject<Block> THORN_VINES = registerBlock("thorn_vines",
-            ()-> new ThornVineBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)) {
+            ()-> new ThornVineBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).requiresCorrectToolForDrops()) {
             });
     public static final RegistryObject<Block> PETRIFIED_ROOT = registerBlock("petrified_root",
-            ()-> new PetrifiedBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_TERRACOTTA)) {
+            ()-> new PetrifiedBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_TERRACOTTA).requiresCorrectToolForDrops()) {
             });
     public static final RegistryObject<Block> FRAGILE_ROOTED_STONE = registerBlock("fragile_rooted_stone",
             ()-> new FragileBlock(BlockBehaviour.Properties.copy(Blocks.STONE)) {
@@ -52,26 +56,26 @@ public class ModBlocks {
             ()-> new IronRoseBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)) {
             });
     public static final RegistryObject<Block> ROOT_IRON_ORE = registerBlock("root_iron_ore",
-            ()-> new SpiderInfestedBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)) {
+            ()-> new SpiderInfestedBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()) {
             });
 
     public static final RegistryObject<Block> IRON_ROOTED_STONE = registerBlock("iron_rooted_stone",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)) {
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(0)) {
             });
     public static final RegistryObject<Block> CYANSTONE = registerBlock("cyanstone",
             ()-> new CyanStoneBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).lightLevel(state -> 5)) {
             });
 
     public static final RegistryObject<Block> IRON_ROOTED_DEEPSLATE = registerBlock("iron_rooted_deepslate",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)) {
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(0)) {
             });
 
     public static final RegistryObject<Block> IRON_ROOTED_NETHERRACK = registerBlock("iron_rooted_netherrack",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)) {
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERRACK).strength(0)) {
             });
 
     public static final RegistryObject<Block> IRON_ROOTED_END_STONE = registerBlock("iron_rooted_end_stone",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)) {
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).strength(0)) {
             });
     public static final RegistryObject<Block> BURNING_FUR = registerBlock("burning_fur",
             ()-> new BurningFurBlock(BlockBehaviour.Properties.copy(Blocks.TORCH).sound(SoundType.WOOL)) {
@@ -83,7 +87,7 @@ public class ModBlocks {
             ()-> new LapisEffectBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.DEEPSLATE_BRICKS).noOcclusion()) {
             });
     public static final RegistryObject<Block> BEDROCK_FUNGUS_STEM = registerBlock("bedrock_fungus_stem",
-            ()-> new BedrockFungusStemBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion()) {
+            ()-> new BedrockFungusStemBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion().strength(7)) {
             });
     public static final RegistryObject<Block> BEDROCK_FUNGUS_CAP = registerBlock("bedrock_fungus_cap",
             ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON)) {
@@ -151,12 +155,79 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> CYAN_MUSHROOM = registerBlock("cyan_mushroom",
-            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5), TreeFeatures.HUGE_RED_MUSHROOM) {
+            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5), ModConfiguredFeatures.HUGE_CYAN_MUSHROOM) {
             });
+    public static final RegistryObject<Block> POTTED_CYAN_MUSHROOM = registerBlock("potted_cyan_mushroom",
+            ()-> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CYAN_MUSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM)) {
+            });
+
+    public static final RegistryObject<Block> CYAN_MUSHROOM_CAP = registerBlock("cyan_mushroom_cap",
+            ()-> new BouncyMushroomBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).lightLevel(state -> 5)) {
+            });
+    public static final RegistryObject<Block> FAKE_BEDROCK = registerBlock("fake_bedrock",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)) {
+            });
+
+    public static final RegistryObject<Block> COAL_DUST = registerBlock("coal_dust",
+            ()-> new GasBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS).noOcclusion().noCollission().replaceable().sound(SoundType.EMPTY).strength(-1, 0)) {
+            });
+
+    public static final RegistryObject<Block> DENSE_COAL_ORE = registerBlock("dense_coal_ore",
+            ()-> new DenseCoalBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE)) {
+            });
+
+    public static final RegistryObject<Block> DEEPSLATE_DENSE_COAL_ORE = registerBlock("deepslate_dense_coal_ore",
+            ()-> new DenseCoalBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_COAL_ORE)) {
+            });
+
+    public static final RegistryObject<Block> CALCITE_PILLAR = registerBlock("calcite_pillar",
+            ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+
+    public static final RegistryObject<Block> CHISELED_CALCITE = registerBlock("chiseled_calcite",
+            ()-> new WorkingDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+
+    public static final RegistryObject<Block> CALCITE_BRICKS = registerBlock("calcite_bricks",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+    public static final RegistryObject<Block> CALCITE_BRICK_STAIRS = registerBlock("calcite_brick_stairs",
+            ()-> new StairBlock(() -> ModBlocks.CALCITE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+    public static final RegistryObject<Block> CALCITE_BRICK_SLAB = registerBlock("calcite_brick_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+    public static final RegistryObject<Block> CALCITE_BRICK_WALL = registerBlock("calcite_brick_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+    public static final RegistryObject<Block> CALCITE_STAIRS = registerBlock("calcite_stairs",
+            ()-> new StairBlock(() -> Blocks.CALCITE.defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+    public static final RegistryObject<Block> CALCITE_SLAB = registerBlock("calcite_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+    public static final RegistryObject<Block> CALCITE_WALL = registerBlock("calcite_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+
+
+
+
 
     ///EVERYTHING BELOW HERE IS OLD
 
-    public static final RegistryObject<Block> CASTLE_GATE = registerBlock("castle_gate",
+
+
+
+
+
+
+
+
+
+    /*public static final RegistryObject<Block> CASTLE_GATE = registerBlock("castle_gate",
             ()-> new CastleGateBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)) {
             });
 
@@ -168,9 +239,7 @@ public class ModBlocks {
             ()-> new BouncyMushroomBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK)) {
             });
 
-    public static final RegistryObject<Block> CYAN_MUSHROOM_CAP = registerBlock("cyan_mushroom_cap",
-            ()-> new BouncyMushroomBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).lightLevel(state -> 5)) {
-            });
+
     public static final RegistryObject<Block> PALE_MUSHROOM_CAP = registerBlock("pale_mushroom_cap",
             ()-> new BouncyMushroomBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK)) {
             });
@@ -353,9 +422,9 @@ public class ModBlocks {
                 @Override
                 public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return 20;
-                }
+                }*/
 
-            });
+          //  });
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

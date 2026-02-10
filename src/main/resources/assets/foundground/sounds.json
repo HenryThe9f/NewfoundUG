@@ -1,0 +1,29 @@
+{
+  "whelp_hurt": {
+    "subtitle": "sounds.foundground.whelp_hurt",
+    "sounds": [
+      "foundground:whelp_hurt_1",
+      "foundground:whelp_hurt_2",
+      "foundground:whelp_hurt_3"
+
+    ]
+  },
+  "whelp_idle": {
+    "subtitle": "sounds.foundground.whelp_idle",
+    "sounds": [
+      "foundground:whelp_idle_1",
+      "foundground:whelp_idle_2",
+      "foundground:whelp_idle_3",
+      "foundground:whelp_idle_4",
+      "foundground:whelp_idle_5",
+      "foundground:whelp_idle_6"
+    ]
+  },
+  "whelp_death": {
+    "subtitle": "sounds.foundground.whelp_death",
+    "sounds": [
+      "foundground:whelp_death"
+
+    ]
+  }
+}

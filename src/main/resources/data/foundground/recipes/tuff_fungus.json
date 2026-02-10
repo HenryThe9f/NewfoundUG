@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:charcoal"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:tuff"
+  }
+}

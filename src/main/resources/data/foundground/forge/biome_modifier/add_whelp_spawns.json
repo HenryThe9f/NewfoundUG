@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#foundground:whelp_biomes",
+  "spawners":
+  {
+    "type": "foundground:whelp",
+    "weight": 10,
+    "minCount": 3,
+    "maxCount": 4
+  }
+}

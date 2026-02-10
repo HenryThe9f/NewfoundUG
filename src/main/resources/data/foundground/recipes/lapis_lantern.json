@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "X": {
+      "item": "minecraft:polished_deepslate"
+    },
+    "T": {
+      "item": "minecraft:torch"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "#T#",
+    "X#X"
+  ],
+  "result": {
+    "item": "foundground:lapis_lantern"
+  },
+  "show_notification": true
+}

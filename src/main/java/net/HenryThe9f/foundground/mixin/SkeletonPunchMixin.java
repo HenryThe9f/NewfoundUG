@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import net.minecraft.world.entity.Mob;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+//random mixin example I did when this project was just a dumping ground for random mod practice stuff.
 
 @Mixin(RangedBowAttackGoal.class)
 public class SkeletonPunchMixin {

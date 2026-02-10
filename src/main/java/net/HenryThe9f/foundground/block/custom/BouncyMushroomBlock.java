@@ -66,6 +66,7 @@ public class BouncyMushroomBlock extends HugeMushroomBlock {
         if ($$4 < 0.1 && !pEntity.isSteppingCarefully()) {
             double $$5 = 0.4 + $$4 * 0.2;
             pEntity.setDeltaMovement(pEntity.getDeltaMovement().multiply($$5, 1.0, $$5));
+
         }
 
         super.stepOn(pLevel, pPos, pState, pEntity);

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "foundground:block/chiseled_calcite_reverse"
+    },
+    "facing=east": {
+      "model": "foundground:block/chiseled_calcite",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "foundground:block/chiseled_calcite",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "foundground:block/chiseled_calcite_reverse",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "foundground:block/chiseled_calcite"
+    },
+    "facing=west": {
+      "model": "foundground:block/chiseled_calcite_reverse",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

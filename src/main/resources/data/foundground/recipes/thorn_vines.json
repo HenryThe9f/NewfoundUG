@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    [
+      {
+        "item": "minecraft:glow_berries"
+      },
+      {
+        "item": "minecraft:hanging_roots"
+      },
+      {
+        "item": "minecraft:vine"
+      }
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "item": "foundground:thorn_vines"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    {
+      "item": "foundground:bedrock_fungus_stem"
+    }
+  ],
+  "result": {
+    "item": "foundground:blinding_stew"
+  }
+}

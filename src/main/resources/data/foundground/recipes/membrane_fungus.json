@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    "X": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    "X# ",
+    "#X#",
+    " #X"
+  ],
+  "result": {
+    "item": "minecraft:phantom_membrane"
+  },
+  "show_notification": true
+}

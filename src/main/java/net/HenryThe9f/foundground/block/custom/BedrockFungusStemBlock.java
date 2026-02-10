@@ -38,11 +38,7 @@ public class BedrockFungusStemBlock extends Block implements BonemealableBlock {
     public void Stemmaker(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRand) {
         if (pRand.nextInt(25) == 0){
             if(!pLevel.isClientSide && pLevel.isEmptyBlock(pPos.offset(0,1,0))) { //cap
-                if (pPos.getY() >= 192) {
-                    pLevel.setBlockAndUpdate(pPos.offset(0, 1, 0), ModBlocks.LAPIS_BEDROCK_FUNGUS_CAP.get().defaultBlockState());
-                } else {
                     pLevel.setBlockAndUpdate(pPos.offset(0, 1, 0), ModBlocks.BEDROCK_FUNGUS_CAP.get().defaultBlockState());
-                }
             }
         } else {
             if(!pLevel.isClientSide && pLevel.isEmptyBlock(pPos.offset(0,1,0))) { //stem
@@ -84,7 +80,7 @@ public class BedrockFungusStemBlock extends Block implements BonemealableBlock {
             return Blocks.AIR.defaultBlockState();
         } else return super.updateShape(pState1, pDirection, pState2, pLevel, pPos1, pPos2);
     }
-    public static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
+    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;

@@ -1,23 +1,33 @@
 package net.HenryThe9f.foundground.entity.custom;
 
 import net.HenryThe9f.foundground.entity.ModEntities;
+import net.HenryThe9f.foundground.sound.ModSounds;
+import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Husk;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import org.jetbrains.annotations.Nullable;
+
+import static net.minecraft.world.entity.monster.Monster.checkMonsterSpawnRules;
 
 public class WhelpEntity extends Animal {
 
@@ -26,7 +36,9 @@ public class WhelpEntity extends Animal {
         super(pEntityType, pLevel);
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1F);
     }
-
+    public static boolean checkWhelpSpawnRules(EntityType<WhelpEntity> pWhelp, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+        return !pLevel.canSeeSky(pPos);
+    }
     @Override public float getWalkTargetValue(BlockPos pPos, LevelReader pLevel) {
         if((pLevel.getRawBrightness(pPos, 0) >= 12)){
             light = true;
@@ -57,7 +69,7 @@ public class WhelpEntity extends Animal {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new BreedGoal(this, 1));
         this.goalSelector.addGoal(2, new PanicGoal(this, 2));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1, Ingredient.of(Items.INK_SAC, Items.RED_MUSHROOM, Items.BROWN_MUSHROOM), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1, Ingredient.of(ModTags.Items.WHELP_FOOD), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1));
         this.goalSelector.addGoal(5, new NoLightWanderGoal(this, 1));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 3f));
@@ -67,6 +79,7 @@ public class WhelpEntity extends Animal {
         super.registerGoals();
     }
 
+
     public static AttributeSupplier.Builder createAttributes(){
 return Animal.createLivingAttributes()
         .add(Attributes.MAX_HEALTH, 6D)
@@ -74,6 +87,8 @@ return Animal.createLivingAttributes()
         .add(Attributes.FOLLOW_RANGE, 24D);
 
     }
+
+
 
     @Nullable
     @Override
@@ -83,7 +98,7 @@ return Animal.createLivingAttributes()
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        if(pStack.is(Items.INK_SAC) || pStack.is(Items.RED_MUSHROOM) || pStack.is(Items.BROWN_MUSHROOM)){
+        if(pStack.is(Items.INK_SAC) || pStack.is(ModTags.Items.WHELP_FOOD)){
             return true;
         } else return false;
     }
@@ -91,10 +106,22 @@ return Animal.createLivingAttributes()
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.DOLPHIN_AMBIENT;
+        return ModSounds.WHELP_IDLE.get();
     }
 
-     class NoLightWanderGoal extends WaterAvoidingRandomStrollGoal {
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return ModSounds.WHELP_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.WHELP_DEATH.get();
+    }
+
+    class NoLightWanderGoal extends WaterAvoidingRandomStrollGoal {
 
 
         public NoLightWanderGoal(PathfinderMob pMob, double pSpeedModifier) {
@@ -108,6 +135,7 @@ return Animal.createLivingAttributes()
             return true;
         }
     }
+
 
 
     public void aiStep() {

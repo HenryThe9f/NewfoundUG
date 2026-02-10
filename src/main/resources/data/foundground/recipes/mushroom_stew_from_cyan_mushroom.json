@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "foundground:cyan_mushroom"
+    },
+    [
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      }
+    ],
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "minecraft:mushroom_stew"
+  }
+}

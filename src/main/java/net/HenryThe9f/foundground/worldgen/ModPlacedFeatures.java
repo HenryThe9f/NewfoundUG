@@ -18,12 +18,13 @@ import java.util.List;
 import static net.HenryThe9f.foundground.worldgen.ModConfiguredFeatures.registerKey;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> HUGE_CAVE_MUSHROOM_PLACED_KEY = registerKey("huge_cave_mushroom_placed");
+    /*
+    public static final ResourceKey<PlacedFeature> HUGE_CYAN_MUSHROOM_PLACED_KEY = registerKey("huge_cyan_mushroom_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, HUGE_CAVE_MUSHROOM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HUGE_CAVE_MUSHROOM),
+        register(context, HUGE_CYAN_MUSHROOM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HUGE_CYAN_MUSHROOM),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2)));
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {
@@ -34,5 +35,7 @@ public class ModPlacedFeatures {
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
+
+     */
 }
 

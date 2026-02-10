@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "foundground:cut_lapis"
+  },
+  "result": "foundground:cut_lapis_stairs"
+}

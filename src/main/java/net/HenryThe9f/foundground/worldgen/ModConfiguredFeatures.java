@@ -25,15 +25,13 @@ import net.minecraftforge.common.Tags;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_CAVE_MUSHROOM = registerKey("huge_cave_mushroom");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_CYAN_MUSHROOM = registerKey("huge_cyan_mushroom");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
-        RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        RuleTest netherrackReplaceable = new BlockMatchTest(Blocks.NETHERRACK);
 
 
-        register(context, HUGE_CAVE_MUSHROOM, Feature.HUGE_RED_MUSHROOM, new HugeMushroomFeatureConfiguration(BlockStateProvider.simple((BlockState)Blocks.RED_MUSHROOM_BLOCK.defaultBlockState().setValue(HugeMushroomBlock.DOWN, false)), BlockStateProvider.simple((BlockState)((BlockState)Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, false)).setValue(HugeMushroomBlock.DOWN, false)), 2));
+
+        register(context, HUGE_CYAN_MUSHROOM, Feature.HUGE_BROWN_MUSHROOM, new HugeMushroomFeatureConfiguration(BlockStateProvider.simple((BlockState)ModBlocks.CYAN_MUSHROOM_CAP.get().defaultBlockState().setValue(HugeMushroomBlock.DOWN, false)), BlockStateProvider.simple((BlockState)((BlockState)Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, false)).setValue(HugeMushroomBlock.DOWN, false)), 2));
 
 
 

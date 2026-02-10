@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "minecraft:lapis_lazuli"
+    }
+  },
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "foundground:smooth_lapis"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    "X": {
+      "item": "minecraft:slime_ball"
+    },
+    "A": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "pattern": [
+    "X# ",
+    "#A#",
+    " #X"
+  ],
+  "result": {
+    "item": "minecraft:ink_sac",
+    "count": 2
+  },
+  "show_notification": true
+}

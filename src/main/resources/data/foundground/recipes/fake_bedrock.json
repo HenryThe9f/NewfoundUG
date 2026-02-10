@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:flint"
+    },
+    "X": {
+      "item": "foundground:bedrock_fungus_stem"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "#X#",
+    "X#X"
+  ],
+  "result": {
+    "item": "foundground:fake_bedrock"
+  },
+  "show_notification": true
+}

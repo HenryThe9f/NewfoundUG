@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "foundground:calcite_bricks"
+  },
+  "result": "foundground:calcite_brick_wall"
+}

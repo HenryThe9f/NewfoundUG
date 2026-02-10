@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "foundground:item/cave_spider_ingot"
+  }
+}

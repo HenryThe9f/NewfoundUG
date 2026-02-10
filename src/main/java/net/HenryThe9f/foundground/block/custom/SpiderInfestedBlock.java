@@ -2,6 +2,7 @@ package net.HenryThe9f.foundground.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.CaveSpider;
 import net.minecraft.world.entity.monster.Silverfish;
@@ -22,11 +23,14 @@ public class SpiderInfestedBlock extends Block {
     public void spawnAfterBreak(BlockState pState, ServerLevel pLevel, BlockPos pPos, ItemStack pStack, boolean pDropExperience) {
         super.spawnAfterBreak(pState, pLevel, pPos, pStack, pDropExperience);
         if (pLevel.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS) && EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, pStack) == 0) {
-            CaveSpider $$2 = (CaveSpider) EntityType.CAVE_SPIDER.create(pLevel);
-            if ($$2 != null) {
-                $$2.moveTo((double)pPos.getX() + 0.5, (double)pPos.getY(), (double)pPos.getZ() + 0.5, 0.0F, 0.0F);
-                pLevel.addFreshEntity($$2);
-                $$2.spawnAnim();
+            RandomSource pRand = RandomSource.create();
+            if (pRand.nextInt(5) == 0) {
+                CaveSpider $$2 = (CaveSpider) EntityType.CAVE_SPIDER.create(pLevel);
+                if ($$2 != null) {
+                    $$2.moveTo((double) pPos.getX() + 0.5, (double) pPos.getY(), (double) pPos.getZ() + 0.5, 0.0F, 0.0F);
+                    pLevel.addFreshEntity($$2);
+                    $$2.spawnAnim();
+                }
             }
         }
 
