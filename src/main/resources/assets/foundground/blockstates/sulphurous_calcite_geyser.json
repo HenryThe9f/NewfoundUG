@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=true": {
+      "model": "foundground:block/sulphurous_calcite_geyser_bottom"
+    },
+    "bottom=false": {
+      "model": "foundground:block/sulphurous_calcite_geyser"
+    }
+  }
+}

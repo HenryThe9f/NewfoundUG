@@ -55,6 +55,9 @@
   "block.foundground.calcite_pillar": "Calcite Pillar",
   "block.foundground.chiseled_calcite": "Chiseled Calcite",
 
+  "block.foundground.sulphur_crystal": "Sulphur Crystal",
+  "block.foundground.sulphur_cluster": "Sulphur Cluster",
+
   "entity.foundground.whelp": "Whelp",
   "entity.foundground.welptorch": "Whelp Torch",
   "entity.foundground.goldspore": "Spectral Charge",

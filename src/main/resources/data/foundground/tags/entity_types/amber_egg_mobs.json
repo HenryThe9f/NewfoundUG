@@ -1,0 +1,19 @@
+{
+  "values": [
+    "minecraft:cow",
+    "minecraft:chicken",
+    "minecraft:pig",
+    "minecraft:sheep",
+    "minecraft:goat",
+    "minecraft:wolf",
+    "minecraft:parrot",
+    "minecraft:panda",
+    "minecraft:llama",
+    "minecraft:frog",
+    "minecraft:fox",
+    "minecraft:turtle",
+    "minecraft:dolphin",
+    "foundground:whelp",
+    "minecraft:zoglin"
+  ]
+}

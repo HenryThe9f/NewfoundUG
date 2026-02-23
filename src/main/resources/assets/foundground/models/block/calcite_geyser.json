@@ -1,0 +1,72 @@
+{
+  "format_version": "1.21.11",
+  "credit": "Made with Blockbench",
+  "render_type": "minecraft:cutout",
+
+  "texture_size": [64, 64],
+  "textures": {
+    "0": "foundground:block/calcite_geyser",
+    "particle": "minecraft:block/calcite"
+  },
+  "elements": [
+    {
+      "name": "base",
+      "from": [4, 0, 4],
+      "to": [12, 16, 12],
+      "rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 4]},
+      "faces": {
+        "north": {"uv": [0, 0, 2, 4], "texture": "#0"},
+        "east": {"uv": [0, 0, 2, 4], "texture": "#0"},
+        "south": {"uv": [0, 0, 2, 4], "texture": "#0"},
+        "west": {"uv": [0, 0, 2, 4], "texture": "#0"},
+        "up": {"uv": [2, 6, 0, 4], "texture": "#0"},
+        "down": {"uv": [2, 1, 0, 3], "texture": "#0"}
+      }
+    },
+    {
+      "name": "hat",
+      "from": [3.5, 9, 3.5],
+      "to": [12.5, 16, 12.5],
+      "rotation": {"angle": 0, "axis": "y", "origin": [3, 14, 3]},
+      "faces": {
+        "north": {"uv": [2, 0, 4.25, 1.75], "texture": "#0"},
+        "east": {"uv": [2, 0, 4.25, 1.75], "texture": "#0"},
+        "south": {"uv": [2, 0, 4.25, 1.75], "texture": "#0"},
+        "west": {"uv": [2, 0, 4.25, 1.75], "texture": "#0"},
+        "up": {"uv": [6.5, 2.25, 4.25, 0], "texture": "#0"},
+        "down": {"uv": [2.25, 4, 0, 6.25], "texture": "#0"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 45, 0],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, -135, 0],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "ground": {
+      "translation": [0, 3, 0],
+      "scale": [0.25, 0.25, 0.25]
+    },
+    "gui": {
+      "rotation": [30, -135, 0],
+      "scale": [0.625, 0.625, 0.625]
+    },
+    "fixed": {
+      "scale": [0.5, 0.5, 0.5]
+    }
+  }
+}

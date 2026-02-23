@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "foundground:block/puncher_bottom",
+    "top": "foundground:block/puncher_top",
+    "side": "foundground:block/puncher_powered"
+  }
+}

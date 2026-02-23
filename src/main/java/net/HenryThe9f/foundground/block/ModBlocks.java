@@ -26,6 +26,8 @@ import net.minecraft.world.level.levelgen.feature.HugeRedMushroomFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -212,10 +214,61 @@ public class ModBlocks {
             ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
             });
 
+    public static final RegistryObject<Block> SULPHUR_CRYSTAL = registerBlock("sulphur_crystal",
+            ()-> new SulphurBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS)) {
+            });
 
+    public static final RegistryObject<Block> SULPHUROUS_CALCITE = registerBlock("sulphurous_calcite",
+            ()-> new SulphurBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
 
+    public static final RegistryObject<Block> SULPHUR_CLUSTER = registerBlock("sulphur_cluster",
+            ()-> new SulphurClusterBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS).noCollission().lightLevel(state -> 3)) {
+            });
 
+    public static final RegistryObject<Block> SULPHUR_DUST = registerBlock("sulphur_dust",
+            ()-> new GasBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS).noOcclusion().noCollission().replaceable().sound(SoundType.EMPTY).strength(-1, 0)) {
+            });
 
+    public static final RegistryObject<Block> SULPHUR_SLIME_BLOCK = registerBlock("sulphur_slime_block",
+            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK)) {
+            });
+
+    public static final RegistryObject<Block> SULPHUR_SLIME_STRANDS = registerBlock("sulphur_slime_strands",
+            ()-> new DrippingSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission()) {
+            });
+
+    public static final RegistryObject<Block> CALCITE_GEYSER = registerBlock("calcite_geyser",
+            ()-> new GeyserBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            });
+
+    public static final RegistryObject<Block> SULPHUROUS_CALCITE_GEYSER = registerBlock("sulphurous_calcite_geyser",
+            ()-> new SulphurGeyserBlock(BlockBehaviour.Properties.copy(ModBlocks.SULPHUROUS_CALCITE.get())) {
+            });
+
+    public static final RegistryObject<Block> PUNCHER = registerBlock("puncher",
+            ()-> new PuncherBlock(BlockBehaviour.Properties.copy(Blocks.DISPENSER)) {
+            });
+
+    public static final RegistryObject<Block> PUNCHER_FIST = registerBlock("puncher_fist",
+            ()-> new FistBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission().pushReaction(PushReaction.DESTROY)) {
+            });
+
+    public static final RegistryObject<Block> AMBER_EGG = registerBlock("amber_egg",
+            ()-> new EggBlock(BlockBehaviour.Properties.copy(Blocks.HONEY_BLOCK)) {
+            });
+
+    public static final RegistryObject<Block> SLIME_PUDDLE = registerBlock("slime_puddle",
+            ()-> new FallingSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK)) {
+            });
+
+    public static final RegistryObject<Block> RUBBER_BLOCK = registerBlock("rubber_block",
+            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).friction(0.6F).speedFactor(1).jumpFactor(2)) {
+            });
+
+    public static final RegistryObject<Block> SULPHUR_BLOCK = registerBlock("sulphur_block",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)) {
+            });
     ///EVERYTHING BELOW HERE IS OLD
 
 

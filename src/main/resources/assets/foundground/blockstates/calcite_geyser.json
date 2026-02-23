@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=true": {
+      "model": "foundground:block/calcite_wall_post"
+    },
+    "bottom=false": {
+      "model": "foundground:block/calcite_geyser"
+    }
+  }
+}

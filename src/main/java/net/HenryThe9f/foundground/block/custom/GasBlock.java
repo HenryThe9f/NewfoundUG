@@ -1,6 +1,7 @@
 package net.HenryThe9f.foundground.block.custom;
 
 
+import net.HenryThe9f.foundground.block.ModBlocks;
 import net.HenryThe9f.foundground.item.Moditems;
 import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.core.BlockPos;
@@ -69,9 +70,9 @@ public void horizontalspreader(ServerLevel pLevel, BlockPos pPos, RandomSource p
                 return;
             }
             if (pLevel.isEmptyBlock(pPos.offset(offsetx[i], 0, offsetz[j])) && pLevel.isEmptyBlock(pPos.offset(offsetx[i], 1, offsetz[j]))) {
-                pLevel.setBlockAndUpdate(pPos.offset(offsetx[i], 0, offsetz[j]), this.defaultBlockState());
+                pLevel.setBlockAndUpdate(pPos.offset(offsetx[i], 1, offsetz[j]), this.defaultBlockState());
                 pLevel.setBlockAndUpdate(pPos, Blocks.AIR.defaultBlockState());
-                pLevel.scheduleTick(pPos.offset(offsetx[i], 0, offsetz[j]), this, SPEED);
+                pLevel.scheduleTick(pPos.offset(offsetx[i], 1, offsetz[j]), this, SPEED);
                 return;
             }
         }
@@ -81,11 +82,23 @@ public void horizontalspreader(ServerLevel pLevel, BlockPos pPos, RandomSource p
             if (pLevel.isEmptyBlock(pPos.offset(offsetx[i], 0, offsetz[j]))) {
                 pLevel.setBlockAndUpdate(pPos.offset(offsetx[i], 0, offsetz[j]), this.defaultBlockState());
                 pLevel.setBlockAndUpdate(pPos, Blocks.AIR.defaultBlockState());
+                if(pLevel.getBlockState(pPos.offset(offsetx[i], 0, offsetz[j]))==(ModBlocks.SULPHUR_DUST.get().defaultBlockState()) && pRand.nextInt(20) == 1){
+                    if(pLevel.getBlockState(pPos.offset(offsetx[i], 1, offsetz[j])).is(ModTags.Blocks.SULPHUR_CRYSTALIZER)){
+                        pLevel.setBlockAndUpdate(pPos.offset(offsetx[i], 0, offsetz[j]), ModBlocks.SULPHUR_CLUSTER.get().defaultBlockState());
+                        return;
+                    } else {
+                        pLevel.setBlockAndUpdate(pPos.offset(offsetx[i], 0, offsetz[j]), Blocks.AIR.defaultBlockState());
+                    }
+                }
                 pLevel.scheduleTick(pPos.offset(offsetx[i], 0, offsetz[j]), this, SPEED);
                 return;
 
             }
         }
+    }
+    if(pLevel.getBlockState(pPos)==(ModBlocks.SULPHUR_DUST.get().defaultBlockState())){
+            pLevel.setBlockAndUpdate(pPos, Blocks.AIR.defaultBlockState());
+
     }
 }
 
@@ -127,11 +140,16 @@ public void horizontalspreader(ServerLevel pLevel, BlockPos pPos, RandomSource p
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         Item item = itemstack.getItem();
         if(itemstack.is(Items.GLASS_BOTTLE)){
+
+            ItemStack itemstack1 = new ItemStack(this.asItem());
+
+
             pLevel.setBlockAndUpdate(pPos, Blocks.AIR.defaultBlockState());
             if (!pPlayer.isCreative()) {
                 itemstack.shrink(1);
             }
-            ItemStack itemstack1 = new ItemStack(Moditems.COAL_DUST_BOTTLE.get());
+
+
             if (itemstack.isEmpty()) {
                 pPlayer.setItemInHand(pHand, itemstack1);
             } else if (!pPlayer.addItem(itemstack1)) {

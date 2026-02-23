@@ -3,8 +3,10 @@ package net.HenryThe9f.foundground.util;
 import net.HenryThe9f.foundground.Newfound_Underground;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -17,6 +19,9 @@ public class ModTags {
         public static final TagKey<Block> NETHER_ROOTABLE = tag("nether_rootable");
         public static final TagKey<Block> END_ROOTABLE = tag("end_rootable");
         public static final TagKey<Block> IGNITES_GAS = tag("ignites_gas");
+        public static final TagKey<Block> SULPHUR_CRYSTALIZER = tag("sulphur_crystalizer");
+
+        public static final TagKey<Block> PUNCHER_ADDITIONAL_WHITELIST = tag("puncher_additional_whitelist");
 
 
         private static TagKey<Block> tag(String name) {
@@ -32,4 +37,14 @@ public class ModTags {
             return ItemTags.create(new ResourceLocation(Newfound_Underground.MODID, name));
         }
     }
+
+    public static class Entities {
+
+        public static final TagKey<EntityType<?>> AMBER_EGG_MOBS = tag("amber_egg_mobs");
+
+        private static TagKey<EntityType<?>> tag(String name) {
+            return EntityTypeTags.create(new ResourceLocation(Newfound_Underground.MODID, name).toString());
+        }
+    }
 }
+//'create(java.lang.String)' has private access in 'net.minecraft.tags.EntityTypeTags'

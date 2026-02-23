@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,powered=false": {
+      "model": "foundground:block/puncher_fist",
+      "x": 180
+    },
+    "facing=east,powered=false": {
+      "model": "foundground:block/puncher_fist",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,powered=false": {
+      "model": "foundground:block/puncher_fist",
+      "x": 90
+    },
+    "facing=south,powered=false": {
+      "model": "foundground:block/puncher_fist",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,powered=false": {
+      "model": "foundground:block/puncher_fist"
+    },
+    "facing=west,powered=false": {
+      "model": "foundground:block/puncher_fist",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,powered=true": {
+      "model": "foundground:block/puncher_fist_powered",
+      "x": 180
+    },
+    "facing=east,powered=true": {
+      "model": "foundground:block/puncher_fist_powered",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,powered=true": {
+      "model": "foundground:block/puncher_fist_powered",
+      "x": 90
+    },
+    "facing=south,powered=true": {
+      "model": "foundground:block/puncher_fist_powered",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,powered=true": {
+      "model": "foundground:block/puncher_fist_powered"
+    },
+    "facing=west,powered=true": {
+      "model": "foundground:block/puncher_fist_powered",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

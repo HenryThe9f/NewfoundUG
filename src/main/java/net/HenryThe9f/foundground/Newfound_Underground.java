@@ -6,6 +6,7 @@ import net.HenryThe9f.foundground.entity.ModBlockEntities;
 import net.HenryThe9f.foundground.entity.ModEntities;
 import net.HenryThe9f.foundground.entity.client.WhelpRenderer;
 import net.HenryThe9f.foundground.entity.custom.GoldSporeEntity;
+import net.HenryThe9f.foundground.entity.custom.WhelpTorchEntity;
 import net.HenryThe9f.foundground.item.ModCreativeModeTabs;
 import net.HenryThe9f.foundground.item.Moditems;
 import net.HenryThe9f.foundground.sound.ModSounds;
@@ -90,6 +91,14 @@ public class Newfound_Underground
                 });
             }
         });
+
+        DispenserBlock.registerBehavior(Moditems.WHELP_TORCH.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level p_123476_, Position p_123477_, ItemStack p_123478_) {
+                return (Projectile) Util.make(new WhelpTorchEntity(p_123476_, p_123477_.x(), p_123477_.y(), p_123477_.z()), (p_123474_) -> {
+                    p_123474_.setItem(p_123478_);
+                });
+            }
+        });
     }
 
     // Add the example block item to the building block tab
@@ -124,6 +133,8 @@ public class Newfound_Underground
            // LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
             EntityRenderers.register(ModEntities.GOLD_SPORE_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(ModEntities.WHELP_TORCH_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.SULPHUR_SLIME_DROP.get(), ThrownItemRenderer::new);
+
             EntityRenderers.register(ModEntities.WHELP.get(), WhelpRenderer::new);
 
         }

@@ -2,6 +2,7 @@ package net.HenryThe9f.foundground.entity;
 
 import net.HenryThe9f.foundground.Newfound_Underground;
 import net.HenryThe9f.foundground.entity.custom.GoldSporeEntity;
+import net.HenryThe9f.foundground.entity.custom.SulphurSlimeDropEntity;
 import net.HenryThe9f.foundground.entity.custom.WhelpEntity;
 import net.HenryThe9f.foundground.entity.custom.WhelpTorchEntity;
 import net.minecraft.world.entity.EntityType;
@@ -21,6 +22,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<WhelpTorchEntity>> WHELP_TORCH_PROJECTILE =
             ENTITY_TYPES.register("whelp_torch", () -> EntityType.Builder.<WhelpTorchEntity>of(WhelpTorchEntity::new, MobCategory.MISC)
                     .sized(0.25f, 0.25f).build("whelptorch"));
+
+    public static final RegistryObject<EntityType<SulphurSlimeDropEntity>> SULPHUR_SLIME_DROP =
+            ENTITY_TYPES.register("sulphur_slime_drop", () -> EntityType.Builder.<SulphurSlimeDropEntity>of(SulphurSlimeDropEntity::new, MobCategory.MISC)
+                    .sized(0.25f, 0.25f).build("sulphurslimedrop"));
 
     public static final RegistryObject<EntityType<WhelpEntity>> WHELP =
             ENTITY_TYPES.register("whelp", () -> EntityType.Builder.of(WhelpEntity::new, MobCategory.CREATURE)
