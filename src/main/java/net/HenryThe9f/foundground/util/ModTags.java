@@ -20,6 +20,8 @@ public class ModTags {
         public static final TagKey<Block> END_ROOTABLE = tag("end_rootable");
         public static final TagKey<Block> IGNITES_GAS = tag("ignites_gas");
         public static final TagKey<Block> SULPHUR_CRYSTALIZER = tag("sulphur_crystalizer");
+        public static final TagKey<Block> SULPHUR_GASSY = tag("sulphur_gassy");
+        public static final TagKey<Block> COAL_GASSY = tag("coal_gassy");
 
         public static final TagKey<Block> PUNCHER_ADDITIONAL_WHITELIST = tag("puncher_additional_whitelist");
 
@@ -32,6 +34,7 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> WHELP_FOOD = tag("whelp_food");
 
+        public static final TagKey<Item> IGNITES_GAS_ITEM = tag("ignites_gas_item");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(Newfound_Underground.MODID, name));

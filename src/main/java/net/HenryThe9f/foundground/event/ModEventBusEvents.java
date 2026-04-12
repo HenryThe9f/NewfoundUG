@@ -5,6 +5,8 @@ import net.HenryThe9f.foundground.Newfound_Underground;
 import net.HenryThe9f.foundground.entity.ModEntities;
 import net.HenryThe9f.foundground.entity.client.MobModelLayers;
 import net.HenryThe9f.foundground.entity.client.WhelpModel;
+import net.HenryThe9f.foundground.entity.custom.GnomeEntity;
+import net.HenryThe9f.foundground.entity.custom.RogerfishEntity;
 import net.HenryThe9f.foundground.entity.custom.WhelpEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -28,10 +30,19 @@ public class ModEventBusEvents {
 @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event){
         event.put(ModEntities.WHELP.get(), WhelpEntity.createAttributes().build());
-    }
+    event.put(ModEntities.ROGERFISH.get(), RogerfishEntity.createAttributes().build());
+    event.put(ModEntities.GNOME.get(), GnomeEntity.createAttributes().build());
+
+}
+
+
+
+
     @SubscribeEvent
     public static void entitySpawnRestriction(SpawnPlacementRegisterEvent event ){
         event.register(ModEntities.WHELP.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WhelpEntity::checkWhelpSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.ROGERFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, RogerfishEntity::checkRogerfishSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
     }
 
 

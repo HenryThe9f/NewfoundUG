@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "foundground:block/bedrock_mycelium_altar_bottom",
+    "east": "foundground:block/bedrock_mycelium_altar_side",
+    "north": "foundground:block/bedrock_mycelium_altar_side",
+    "particle": "foundground:block/bedrock_mycelium_altar_top",
+    "south": "foundground:block/bedrock_mycelium_altar_side",
+    "up": "foundground:block/bedrock_mycelium_altar_top",
+    "west": "foundground:block/bedrock_mycelium_altar_side"
+  }
+}

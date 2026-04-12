@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "foundground:sulphurous_calcite",
+    "foundground:sulphur_crystal",
+    "foundground:sulphur_block"
+  ]
+}

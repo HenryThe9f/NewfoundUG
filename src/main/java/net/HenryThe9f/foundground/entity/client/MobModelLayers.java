@@ -8,4 +8,9 @@ public class MobModelLayers {
     public static ModelLayerLocation WHELP_LAYER = new ModelLayerLocation(
             new ResourceLocation(Newfound_Underground.MODID, "whelp_layer"), "main");
 
+    public static ModelLayerLocation ROGERFISH_LAYER = new ModelLayerLocation(
+            new ResourceLocation(Newfound_Underground.MODID, "rogerfish_layer"), "main");
+
+    public static ModelLayerLocation GNOME_LAYER = new ModelLayerLocation(
+            new ResourceLocation(Newfound_Underground.MODID, "gnome_layer"), "main");
 }

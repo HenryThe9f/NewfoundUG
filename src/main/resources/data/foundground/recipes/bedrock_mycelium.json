@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "foundground:bedrock_fungus_stem"
+    }
+  },
+  "pattern": [
+    "BBB"
+  ],
+  "result": {
+    "count": 3,
+    "item": "foundground:bedrock_mycelium"
+  },
+  "show_notification": true
+}

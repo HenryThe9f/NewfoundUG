@@ -10,6 +10,12 @@ public class ModBiomes {
     public static final ResourceKey<Biome> ROOTS_BIOME = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(Newfound_Underground.MODID, "roots_biome")
             );
+    public static final ResourceKey<Biome> SULPHUR_SLIME_CAVES = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(Newfound_Underground.MODID, "sulphur_slime_caves")
+    );
+    public static final ResourceKey<Biome> BLACK_SEA = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(Newfound_Underground.MODID, "black_sea")
+    );
 /*
     public static void bootstrap(BootstapContext<Biome> context){
         context.register(ROOTS_BIOME, rootsBiome(context));

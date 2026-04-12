@@ -13,7 +13,7 @@ import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class SpiderInfestedBlock extends Block {
+public class SpiderInfestedBlock extends PetrifiedBlock {
     public SpiderInfestedBlock(Properties pProperties) {
         super(pProperties);
     }

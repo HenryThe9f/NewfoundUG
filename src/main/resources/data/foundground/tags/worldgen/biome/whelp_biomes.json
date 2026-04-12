@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:dripstone_caves",
-    "foundground:roots_biome"
+    "foundground:roots_biome",
+    "foundground:sulphur_slime_caves"
   ]
 }

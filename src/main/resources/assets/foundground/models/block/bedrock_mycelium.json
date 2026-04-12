@@ -1,0 +1,27 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:translucent",
+
+	"texture_size": [16, 32],
+	"textures": {
+		"0": "foundground:block/bedrock_mycelium",
+		"particle": "foundground:block/bedrock_fungus_stem"
+	},
+	"elements": [
+		{
+			"from": [-0.05, -15.95, -0.05],
+			"to": [16.05, 0.05, 16.05],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -16, 0]},
+			"faces": {
+				"north": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 8, 16, 16], "texture": "#0"},
+				"up": {"uv": [16, 8, 0, 0], "texture": "#0"},
+				"down": {"uv": [1, 15.5, 0, 16], "texture": "#0"}
+			}
+		}
+	],
+	"display": {}
+}

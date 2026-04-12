@@ -1,0 +1,9 @@
+{
+  "remove": [
+    "#minecraft:replaceable"
+  ],
+  "values": [
+    "#minecraft:overworld_carver_replaceables",
+    "foundground:slime_puddle"
+  ]
+}

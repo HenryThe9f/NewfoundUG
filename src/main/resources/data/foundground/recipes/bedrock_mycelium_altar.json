@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "foundground:fake_bedrock"
+    },
+    "B": {
+      "item": "foundground:bedrock_fungus_stem"
+    },
+    "D": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "A": {
+      "item": "foundground:petrified_root"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "D#D",
+    "AAA"
+  ],
+  "result": {
+    "item": "foundground:bedrock_mycelium_altar"
+  },
+  "show_notification": true
+}

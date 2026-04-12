@@ -4,6 +4,7 @@ import net.HenryThe9f.foundground.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -13,8 +14,9 @@ import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class DenseCoalBlock extends DropExperienceBlock {
-    public DenseCoalBlock(Properties pProperties) {
-        super(pProperties);
+
+    public DenseCoalBlock(Properties pProperties, IntProvider pXpRange) {
+        super(pProperties, pXpRange);
     }
 
     @Override

@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#foundground:rogerfish_biomes",
+  "spawners":
+  {
+    "type": "foundground:rogerfish",
+    "weight": 10,
+    "minCount": 2,
+    "maxCount": 5
+  }
+}

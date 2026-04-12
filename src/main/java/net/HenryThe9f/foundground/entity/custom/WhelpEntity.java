@@ -1,5 +1,6 @@
 package net.HenryThe9f.foundground.entity.custom;
 
+import net.HenryThe9f.foundground.block.ModBlocks;
 import net.HenryThe9f.foundground.entity.ModEntities;
 import net.HenryThe9f.foundground.sound.ModSounds;
 import net.HenryThe9f.foundground.util.ModTags;
@@ -24,8 +25,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.EnumSet;
+import java.util.function.Predicate;
 
 import static net.minecraft.world.entity.monster.Monster.checkMonsterSpawnRules;
 
@@ -71,9 +78,11 @@ public class WhelpEntity extends Animal {
         this.goalSelector.addGoal(2, new PanicGoal(this, 2));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1, Ingredient.of(ModTags.Items.WHELP_FOOD), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1));
-        this.goalSelector.addGoal(5, new NoLightWanderGoal(this, 1));
-        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 3f));
-        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(5, new CarpetGoal(this));
+
+        this.goalSelector.addGoal(6, new NoLightWanderGoal(this, 1));
+            this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 3f));
+        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 
 
         super.registerGoals();
@@ -136,6 +145,30 @@ return Animal.createLivingAttributes()
         }
     }
 
+    public class CarpetGoal extends Goal {
+
+        private final Mob mob;
+        private final Level level;
+        public CarpetGoal(Mob pMob) {
+            this.mob = pMob;
+            this.level = pMob.level();
+            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK, Flag.JUMP));
+        }
+        public void start() {
+            this.level.setBlockAndUpdate(this.mob.blockPosition(), ModBlocks.WHELP_FUR_CARPET.get().defaultBlockState());
+        }
+
+        public void stop() {
+            super.stop();
+        }
+            public boolean canUse() {
+            if (this.mob.getRandom().nextInt(2000) == 0 && !this.mob.isBaby() && level.getLightLevelDependentMagicValue(this.mob.blockPosition()) == 0 && level.isEmptyBlock(this.mob.blockPosition()) && level.getBlockState(this.mob.blockPosition().offset(0, -1, 0)).is(Tags.Blocks.STONE)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 
 
     public void aiStep() {

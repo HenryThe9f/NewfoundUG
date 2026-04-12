@@ -4,7 +4,10 @@ import net.HenryThe9f.foundground.block.ModBlocks;
 import net.HenryThe9f.foundground.item.Moditems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.BlockSource;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -20,6 +23,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class GasBottleItem extends BlockItem {
@@ -45,4 +49,11 @@ public class GasBottleItem extends BlockItem {
         return interactionresult;
 
     }
+
+
+
+
+
+
+
 }

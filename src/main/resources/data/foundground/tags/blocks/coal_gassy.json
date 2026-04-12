@@ -1,0 +1,9 @@
+{
+  "values": [
+    "foundground:dense_coal_ore",
+    "foundground:deepslate_dense_coal_ore",
+    "minecraft:coal_ore",
+    "minecraft:deepslate_coal_ore",
+    "minecraft:coal_block"
+  ]
+}

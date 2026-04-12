@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "foundground:rogerfish_skull"
+    },
+    "C": {
+      "item": "minecraft:bone_block"
+    },
+    "E": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "pattern": [
+    "BEB",
+    "CCC"
+  ],
+  "result": {
+    "item": "foundground:bony_farmland"
+  },
+  "show_notification": true
+}

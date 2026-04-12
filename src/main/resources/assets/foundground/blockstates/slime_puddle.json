@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "layers=1": {
       "model": "foundground:block/slime_puddle"
+    },
+    "layers=2": {
+      "model": "foundground:block/slime_puddle_2"
+    },
+    "layers=3": {
+      "model": "foundground:block/slime_puddle_3"
+    },
+    "layers=4": {
+      "model": "foundground:block/sulphur_slime_block"
     }
   }
 }

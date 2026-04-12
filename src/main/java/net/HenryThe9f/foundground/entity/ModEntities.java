@@ -1,10 +1,7 @@
 package net.HenryThe9f.foundground.entity;
 
 import net.HenryThe9f.foundground.Newfound_Underground;
-import net.HenryThe9f.foundground.entity.custom.GoldSporeEntity;
-import net.HenryThe9f.foundground.entity.custom.SulphurSlimeDropEntity;
-import net.HenryThe9f.foundground.entity.custom.WhelpEntity;
-import net.HenryThe9f.foundground.entity.custom.WhelpTorchEntity;
+import net.HenryThe9f.foundground.entity.custom.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,6 +27,14 @@ public class ModEntities {
     public static final RegistryObject<EntityType<WhelpEntity>> WHELP =
             ENTITY_TYPES.register("whelp", () -> EntityType.Builder.of(WhelpEntity::new, MobCategory.CREATURE)
                     .sized(0.45f, 0.45f).build("whelp"));
+
+    public static final RegistryObject<EntityType<RogerfishEntity>> ROGERFISH =
+            ENTITY_TYPES.register("rogerfish", () -> EntityType.Builder.of(RogerfishEntity::new, MobCategory.UNDERGROUND_WATER_CREATURE)
+                    .sized(0.45f, 0.45f).build("rogerfish"));
+
+    public static final RegistryObject<EntityType<GnomeEntity>> GNOME =
+            ENTITY_TYPES.register("gnome", () -> EntityType.Builder.of(GnomeEntity::new, MobCategory.MISC)//had to make gnomentity entity type publicz
+                    .sized(0.875f, 1.5f).build("gnome"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

@@ -13,10 +13,7 @@ import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.Fallable;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -25,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.Tags;
 
 public class PuncherBlock extends WorkingDirectionalBlock implements Fallable {
     public static final DirectionProperty FACING;
@@ -90,9 +88,11 @@ public class PuncherBlock extends WorkingDirectionalBlock implements Fallable {
                 if(vState.getPistonPushReaction() == PushReaction.DESTROY){
                     pLevel.destroyBlock(vPos, Boolean.TRUE);
                 } else {
+                    int MaxDmg = (int)vState.getDestroySpeed(pLevel, vPos);
                     FallingBlockEntity $$5 = FallingBlockEntity.fall(pLevel, vPos, vState);
                     this.falling($$5);
                     $$5.moveTo($$5.position().x, $$5.position().y + 0.1, $$5.position().z);
+                    $$5.setHurtsEntities(2.0F, MaxDmg*8);
                     pLevel.playSound((Player)null, pPos, SoundEvents.PLAYER_ATTACK_KNOCKBACK, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.25F + 0.6F);
                     pLevel.setBlockAndUpdate(vPos, ModBlocks.PUNCHER_FIST.get().defaultBlockState().setValue(FACING, pState.getValue(FACING)));
                     pLevel.setBlock(pPos, pState.setValue(POWERED, Boolean.TRUE), 2);

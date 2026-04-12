@@ -13,16 +13,26 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class BedrockFungusStemBlock extends Block implements BonemealableBlock {
+public class BedrockFungusStemBlock extends Block implements SimpleWaterloggedBlock, BonemealableBlock{
     public BedrockFungusStemBlock(Properties pProperties) {
         super(pProperties);
+        this.registerDefaultState((BlockState)((BlockState) this.stateDefinition.any()).setValue(WATERLOGGED, false));
+
     }
+    private static final BooleanProperty WATERLOGGED;
 
     @Override
     public boolean isRandomlyTicking(BlockState state) {
@@ -76,6 +86,9 @@ public class BedrockFungusStemBlock extends Block implements BonemealableBlock {
         else { return false;}
     }
     public BlockState updateShape(BlockState pState1, Direction pDirection, BlockState pState2, LevelAccessor pLevel, BlockPos pPos1, BlockPos pPos2) {
+        if ((Boolean)pState1.getValue(WATERLOGGED)) {
+            pLevel.scheduleTick(pPos1, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+        }
         if (!this.canSurvive(pState1, pLevel, pPos1)) {
             return Blocks.AIR.defaultBlockState();
         } else return super.updateShape(pState1, pDirection, pState2, pLevel, pPos1, pPos2);
@@ -84,5 +97,14 @@ public class BedrockFungusStemBlock extends Block implements BonemealableBlock {
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
+    }
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(new Property[]{WATERLOGGED});
+    }
+    public FluidState getFluidState(BlockState p_153360_) {
+        return (Boolean)p_153360_.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(p_153360_);
+    }
+    static {
+        WATERLOGGED = BlockStateProperties.WATERLOGGED;
     }
 }

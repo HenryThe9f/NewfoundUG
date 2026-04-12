@@ -13,6 +13,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -60,7 +61,16 @@ public class GasBlock extends Block {
 
         }
 }
-public void horizontalspreader(ServerLevel pLevel, BlockPos pPos, RandomSource pRand) {
+
+    @Override
+    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+        if(pLevel instanceof ServerLevel && pEntity instanceof Player && (((Player) pEntity).getMainHandItem().is(ModTags.Items.IGNITES_GAS_ITEM) || ((Player) pEntity).getOffhandItem().is(ModTags.Items.IGNITES_GAS_ITEM))){
+            gasexplode(((ServerLevel) pLevel), pPos);
+        }
+        super.entityInside(pState, pLevel, pPos, pEntity);
+    }
+
+    public void horizontalspreader(ServerLevel pLevel, BlockPos pPos, RandomSource pRand) {
 
 
     for (int i = 0; i < 3; i++) {

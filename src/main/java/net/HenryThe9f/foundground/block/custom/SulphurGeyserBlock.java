@@ -1,12 +1,18 @@
 package net.HenryThe9f.foundground.block.custom;
 
 import net.HenryThe9f.foundground.block.ModBlocks;
+import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -19,8 +25,10 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.apache.logging.log4j.core.jmx.Server;
 
 public class SulphurGeyserBlock extends Block implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED;
@@ -63,9 +71,23 @@ public class SulphurGeyserBlock extends Block implements SimpleWaterloggedBlock 
 
     }
     public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
-        if (!pEntity.isSteppingCarefully()) {
-            pEntity.setDeltaMovement(Math.signum(pEntity.getDeltaMovement().x)*(Math.min(Math.abs(pEntity.getDeltaMovement().x)*10, 2)), 0.75, (Math.signum(pEntity.getDeltaMovement().z)*(Math.min(Math.abs(pEntity.getDeltaMovement().z)*10, 2))));
+        RandomSource pRand = RandomSource.create();
+
+        if (!pEntity.isSteppingCarefully()){
+            if (pEntity instanceof LivingEntity) {
+            pEntity.setDeltaMovement(pEntity.getLookAngle().x * 2, 0.5, pEntity.getLookAngle().z * 2);
+        } else {
+            pEntity.setDeltaMovement(Math.signum(pEntity.getDeltaMovement().x) * (Math.min(Math.abs(pEntity.getDeltaMovement().x) * 10, 2)), 0.75, (Math.signum(pEntity.getDeltaMovement().z) * (Math.min(Math.abs(pEntity.getDeltaMovement().z) * 10, 2))));
         }
+if(pLevel.isClientSide){
+    for(int i = 0; i <5; i++){
+        pLevel.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.SULPHUR_SLIME_BLOCK.get().defaultBlockState()), (double)pPos.getX() + 0.5, (double)pPos.getY() + 1.1, (double)pPos.getZ() + 0.5, (pRand.nextDouble()-0.5)*2, (pRand.nextDouble())+5, (pRand.nextDouble()-0.5)*2);
+    }
+    pLevel.addParticle((ParticleTypes.EXPLOSION), (double)pPos.getX() + 0.5, (double)pPos.getY() + 1.1, (double)pPos.getZ() + 0.5, 0, 0, 0);
+}
+pLevel.playSound((Player)null, pPos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.25F + 0.6F);
+
+    }
 
         super.stepOn(pLevel, pPos, pState, pEntity);
     }

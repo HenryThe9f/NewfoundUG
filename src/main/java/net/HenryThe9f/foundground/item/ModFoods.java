@@ -11,4 +11,7 @@ public class ModFoods {
             .saturationMod(0.6f).fast().build();
     public static final FoodProperties COOKED_WHELP = new FoodProperties.Builder().nutrition(4)
             .saturationMod(2f).fast().build();
+
+    public static final FoodProperties OREANGE = new FoodProperties.Builder().nutrition(6)
+            .saturationMod(0.5f).build();
 }

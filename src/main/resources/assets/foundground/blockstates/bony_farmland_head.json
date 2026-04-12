@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "foundground:block/bony_farmland_head",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "foundground:block/bony_farmland_head"
+    },
+    "facing=south": {
+      "model": "foundground:block/bony_farmland_head",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "foundground:block/bony_farmland_head",
+      "y": 270
+    }
+  }
+}

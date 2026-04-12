@@ -21,22 +21,45 @@ public class ModOverworldRegion extends Region{
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
-           modifiedVanillaOverworldBuilder.replaceBiome(Biomes.LUSH_CAVES, ModBiomes.ROOTS_BIOME);
+          // modifiedVanillaOverworldBuilder.replaceBiome(Biomes.LUSH_CAVES, ModBiomes.ROOTS_BIOME);
+           // modifiedVanillaOverworldBuilder.replaceBiome(Biomes.DRIPSTONE_CAVES, ModBiomes.SULPHUR_SLIME_CAVES);
             VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-            /* from terrablender github. going to try and tweak this later
             new ParameterUtils.ParameterPointListBuilder()
-                    .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.FROZEN))
-                    .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY))
-                    .continentalness(ParameterUtils.Continentalness.INLAND)
-                    .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
-                    .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
-                    .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                    .temperature(ParameterUtils.Temperature.FULL_RANGE)
+                    .humidity(ParameterUtils.Humidity.DRY)
+                    .continentalness(ParameterUtils.Continentalness.FULL_RANGE)
+                    .erosion(ParameterUtils.Erosion.FULL_RANGE)
+                    .depth(ParameterUtils.Depth.UNDERGROUND)
+                    .weirdness(ParameterUtils.Weirdness.FULL_RANGE)
                     .build().forEach(point -> builder.add(point, ModBiomes.ROOTS_BIOME));
-
+            new ParameterUtils.ParameterPointListBuilder()
+                    .temperature(ParameterUtils.Temperature.ICY)
+                    .humidity(ParameterUtils.Humidity.FULL_RANGE)
+                    .continentalness(ParameterUtils.Continentalness.FULL_RANGE)
+                    .erosion(ParameterUtils.Erosion.FULL_RANGE)
+                    .depth(ParameterUtils.Depth.UNDERGROUND)
+                    .weirdness(ParameterUtils.Weirdness.FULL_RANGE)
+                    .build().forEach(point -> builder.add(point, ModBiomes.SULPHUR_SLIME_CAVES));
+            new ParameterUtils.ParameterPointListBuilder()
+                    .temperature(ParameterUtils.Temperature.HOT)
+                    .humidity(ParameterUtils.Humidity.FULL_RANGE)
+                    .continentalness(ParameterUtils.Continentalness.FULL_RANGE)
+                    .erosion(ParameterUtils.Erosion.FULL_RANGE)
+                    .depth(ParameterUtils.Depth.UNDERGROUND)
+                    .weirdness(ParameterUtils.Weirdness.FULL_RANGE)
+                    .build().forEach(point -> builder.add(point, ModBiomes.SULPHUR_SLIME_CAVES));
+            /*new ParameterUtils.ParameterPointListBuilder()
+                    .temperature(ParameterUtils.Temperature.FULL_RANGE)
+                    .humidity(ParameterUtils.Humidity.WET)
+                    .continentalness(ParameterUtils.Continentalness.FULL_RANGE)
+                    .erosion(ParameterUtils.Erosion.EROSION_6)
+                    .depth(Climate.Parameter.span(0.8F, 1.5F))
+                    .weirdness(ParameterUtils.Weirdness.FULL_RANGE)
+                    .build().forEach(point -> builder.add(point, ModBiomes.BLACK_SEA));*/
             // Add our points to the mapper
             builder.build().forEach(mapper::accept);
 
-             */
+
         });
     }
 }

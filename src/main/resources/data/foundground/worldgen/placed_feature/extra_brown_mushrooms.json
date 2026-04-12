@@ -1,5 +1,5 @@
 {
-  "feature": "minecraft:patch_brown_mushroom",
+  "feature": "foundground:patch_brown_mushroom_alt",
   "placement": [
     {
       "type": "minecraft:count",
@@ -29,6 +29,11 @@
       "max_steps": 12,
       "target_condition": {
         "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
         "blocks": "foundground:petrified_root"
       },
       "allowed_search_condition": {

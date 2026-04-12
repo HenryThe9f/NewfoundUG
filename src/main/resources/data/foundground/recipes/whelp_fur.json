@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "foundground:whelp_fur_carpet"
+    },
+    {
+      "item": "foundground:whelp_fur_carpet"
+    },
+    {
+      "item": "foundground:whelp_fur_carpet"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "foundground:whelp_fur"
+  }
+}

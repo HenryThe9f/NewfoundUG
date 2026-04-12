@@ -2,7 +2,9 @@ package net.HenryThe9f.foundground.event;
 
 
 import net.HenryThe9f.foundground.Newfound_Underground;
+import net.HenryThe9f.foundground.entity.client.GnomeModel;
 import net.HenryThe9f.foundground.entity.client.MobModelLayers;
+import net.HenryThe9f.foundground.entity.client.RogerfishModel;
 import net.HenryThe9f.foundground.entity.client.WhelpModel;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -14,6 +16,9 @@ public class ModEventBusClientEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(MobModelLayers.WHELP_LAYER, WhelpModel::createBodyLayer);
+        event.registerLayerDefinition(MobModelLayers.ROGERFISH_LAYER, RogerfishModel::createBodyLayer);
+        event.registerLayerDefinition(MobModelLayers.GNOME_LAYER, GnomeModel::createBodyLayer);
+
     }
 
 }

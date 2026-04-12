@@ -72,10 +72,12 @@
       "foundground:short_thorn_roots",
       "foundground:raw_iron_rose",
       "foundground:vanilla_roots",
-      "foundground:root_iron_ore",
+
       "foundground:fragile_roots",
-      "foundground:extra_brown_mushrooms",
-      "foundground:extra_red_mushrooms"
+      "foundground:extra_red_mushrooms",
+      "foundground:extra_brown_mushrooms"
+
+
     ],
     [
       "minecraft:spring_water",
@@ -165,12 +167,6 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
-      },
-      {
-        "type": "minecraft:drowned",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 95
       }
     ],
     "underground_water_creature": [

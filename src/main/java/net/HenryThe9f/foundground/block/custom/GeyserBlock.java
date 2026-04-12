@@ -6,8 +6,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -69,8 +72,18 @@ public class GeyserBlock extends Block implements SimpleWaterloggedBlock {
 
     }
     public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+        RandomSource pRand = RandomSource.create();
+
         if (!pEntity.isSteppingCarefully()) {
             pEntity.setDeltaMovement(pEntity.getDeltaMovement().x, 1.5, pEntity.getDeltaMovement().z);
+            if(pLevel.isClientSide){
+                for(int i = 0; i <5; i++){
+                    pLevel.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.SULPHUR_SLIME_BLOCK.get().defaultBlockState()), (double)pPos.getX() + 0.5, (double)pPos.getY() + 1.1, (double)pPos.getZ() + 0.5, (pRand.nextDouble()-0.5)*2, (pRand.nextDouble())+5, (pRand.nextDouble()-0.5)*2);
+                }
+                pLevel.addParticle((ParticleTypes.EXPLOSION), (double)pPos.getX() + 0.5, (double)pPos.getY() + 1.1, (double)pPos.getZ() + 0.5, 0, 0, 0);
+            }
+            pLevel.playSound((Player)null, pPos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.25F + 0.6F);
+
         }
 
         super.stepOn(pLevel, pPos, pState, pEntity);
