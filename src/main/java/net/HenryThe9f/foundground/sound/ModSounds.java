@@ -15,6 +15,12 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> WHELP_IDLE = registerSoundEvents("whelp_idle");
     public static final RegistryObject<SoundEvent> WHELP_HURT = registerSoundEvents("whelp_hurt");
     public static final RegistryObject<SoundEvent> WHELP_DEATH = registerSoundEvents("whelp_death");
+    public static final RegistryObject<SoundEvent> TERRACOTTA_HORN = registerSoundEvents("terracotta_horn");
+    public static final RegistryObject<SoundEvent> ROGERFISH_FLOP = registerSoundEvents("rogerfish_flop");
+    public static final RegistryObject<SoundEvent> ROGERFISH_HURT = registerSoundEvents("rogerfish_hurt");
+    public static final RegistryObject<SoundEvent> ROGERFISH_DEATH = registerSoundEvents("rogerfish_death");
+    public static final RegistryObject<SoundEvent> GNOME_HURT = registerSoundEvents("gnome_hurt");
+    public static final RegistryObject<SoundEvent> GNOME_DEATH = registerSoundEvents("gnome_death");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name){
         return SOUND_EVENTS.register(name, ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation(Newfound_Underground.MODID, name)));

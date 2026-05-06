@@ -30,6 +30,19 @@
     "foundground:calcite_stairs",
     "foundground:calcite_wall",
     "foundground:calcite_pillar",
-    "foundground:chiseled_calcite"
+    "foundground:chiseled_calcite",
+    "foundground:sulphur_crystal",
+    "foundground:sulphur_cluster",
+    "foundground:sulphur_block",
+    "foundground:sulphurous_calcite",
+    "foundground:calcite_geyser",
+    "foundground:sulphurous_calcite_geyser",
+    "foundground:bony_farmland",
+    "foundground:bony_farmland_head",
+    "foundground:puncher",
+    "foundground:cracked_bricks",
+    "foundground:chiseled_bricks"
+
+
   ]
 }

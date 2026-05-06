@@ -6,12 +6,15 @@ import net.HenryThe9f.foundground.entity.ModEntities;
 import net.HenryThe9f.foundground.item.custom.*;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import javax.annotation.Nullable;
 
 public class Moditems {
     public static final DeferredRegister<Item> ITEMS =
@@ -35,7 +38,7 @@ public class Moditems {
 
     public static final RegistryObject<Item> COOKED_WHELP = ITEMS.register("cooked_whelp", ()->new Item(new Item.Properties().food(ModFoods.COOKED_WHELP)));
 
-    public static final RegistryObject<Item> RAW_IRON_ROSE_ITEM = ITEMS.register("raw_iron_rose_item", ()->new Item(new Item.Properties()));
+  //  public static final RegistryObject<Item> RAW_IRON_ROSE_ITEM = ITEMS.register("raw_iron_rose_item", ()->new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CAVE_SPIDER_INGOT = ITEMS.register("cave_spider_ingot", ()->new Item(new Item.Properties().craftRemainder(Items.IRON_INGOT)));
 
@@ -56,7 +59,12 @@ public class Moditems {
 
     public static final RegistryObject<Item> RUBBER = ITEMS.register("rubber", ()->new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> SULPHUR = ITEMS.register("sulphur", ()->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SULPHUR = ITEMS.register("sulphur", ()->new Item(new Item.Properties()){
+        @Override
+        public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType){
+            return 2000;
+        }
+    });
 
     public static final RegistryObject<Item> LAPIS_STAMP = ITEMS.register("lapis_stamp", ()->new StampItem(ModBlocks.LAPIS_RUNE.get(), new Item.Properties().stacksTo(1)));
 
@@ -64,6 +72,23 @@ public class Moditems {
 
     public static final RegistryObject<Item> FORBIDDEN_FRUIT = ITEMS.register("forbidden_fruit", ()->new ForbiddenFruitItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> CLAY_HORN = ITEMS.register("clay_horn", ()->new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> TERRACOTTA_HORN = ITEMS.register("terracotta_horn", ()->new HornItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> GNOME_ITEM = ITEMS.register("gnome_item", ()->new GnomeItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> WHELP_FUR = ITEMS.register("whelp_fur", ()->new BlockItem(ModBlocks.WHELP_FUR_BLOCK.get(), new Item.Properties()){
+        @Override
+        public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType){
+            return 1400;
+        }
+    });
+
+    public static final RegistryObject<Item> WHELP_FUR_CARPET = ITEMS.register("whelp_fur_carpet", ()->new BlockItem(ModBlocks.WHELP_FUR_CARPET_BLOCK.get(), new Item.Properties()){
+        @Override
+        public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType){
+            return 900;
+        }
+    });
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

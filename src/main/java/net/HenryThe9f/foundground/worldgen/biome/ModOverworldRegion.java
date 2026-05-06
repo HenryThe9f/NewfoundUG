@@ -55,7 +55,7 @@ public class ModOverworldRegion extends Region{
                     .erosion(ParameterUtils.Erosion.EROSION_6)
                     .depth(Climate.Parameter.span(0.8F, 1.5F))
                     .weirdness(ParameterUtils.Weirdness.FULL_RANGE)
-                    .build().forEach(point -> builder.add(point, ModBiomes.BLACK_SEA));*/
+                    .build().forEach(point -> builder.add(point, ModBiomes.BLACK_SEA)); man i wish this biome didnt suck ass it was almost so cool*/
             // Add our points to the mapper
             builder.build().forEach(mapper::accept);
 

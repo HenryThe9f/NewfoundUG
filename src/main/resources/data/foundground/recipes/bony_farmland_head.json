@@ -13,8 +13,8 @@
     }
   },
   "pattern": [
-    "#BC",
-    "#CE"
+    "BC",
+    "CE"
   ],
   "result": {
     "item": "foundground:bony_farmland_head"

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": {
+      "item": "foundground:bubble_block"
+    },
+    "R": {
+      "item": "minecraft:magma_cream"
+    }
+  },
+  "pattern": [
+    " R ",
+    "RGR",
+    " R "
+  ],
+  "result": {
+    "item": "foundground:lava_bubble_block"
+  },
+  "show_notification": true
+}

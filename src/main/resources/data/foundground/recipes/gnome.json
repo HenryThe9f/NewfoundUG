@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "item": "minecraft:red_terracotta"
+    },
+    "P": {
+      "item": "foundground:whelp_fur"
+    },
+    "N": {
+      "tag": "minecraft:decorated_pot_sherds"
+    }
+  },
+  "pattern": [
+    " H ",
+    "HNH",
+    "PPP"
+  ],
+  "result": {
+    "item": "foundground:gnome_item"
+  },
+  "show_notification": true
+}

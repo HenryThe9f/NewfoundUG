@@ -2,6 +2,7 @@ package net.HenryThe9f.foundground.entity.custom;
 
 import net.HenryThe9f.foundground.entity.ModEntities;
 import net.HenryThe9f.foundground.item.Moditems;
+import net.HenryThe9f.foundground.sound.ModSounds;
 import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +38,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraftforge.common.Tags;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -79,7 +81,7 @@ public class RogerfishEntity extends AbstractFish {
 
     @Override
     protected SoundEvent getFlopSound() {
-        return SoundEvents.SKELETON_HURT;
+        return ModSounds.ROGERFISH_FLOP.get();
     }
 
     public boolean hurt(DamageSource pSource, float pAmount) {
@@ -92,7 +94,17 @@ public class RogerfishEntity extends AbstractFish {
 
     }
 
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return ModSounds.ROGERFISH_HURT.get();
+    }
 
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.ROGERFISH_DEATH.get();
+    }
 
     protected void handleAirSupply(int pAirSupply) {
     }

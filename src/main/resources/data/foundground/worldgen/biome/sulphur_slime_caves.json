@@ -36,7 +36,8 @@
     ],
     [
       "minecraft:monster_room",
-      "minecraft:monster_room_deep"
+      "minecraft:monster_room_deep",
+      "foundground:sulphur_slime_disk"
     ],
     [],
     [],
@@ -76,7 +77,6 @@
       "minecraft:spring_lava"
     ],
     [
-      "foundground:sulphur_slime_disk",
       "foundground:calcite_ore",
       "foundground:sulphur_calcite_ore",
       "foundground:sulphurous_calcite_geyser",

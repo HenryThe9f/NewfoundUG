@@ -6,7 +6,9 @@
     "foundground:cyan_mushroom_cap",
     "foundground:japebox",
     "foundground:bedrock_fungus_cap",
-    "foundground:lapis_bedrock_fungus_cap"
-
+    "foundground:lapis_bedrock_fungus_cap",
+    "foundground:amber_ore",
+    "foundground:forbidden_fruit_ore",
+    "foundground:bedrock_mycelium_altar"
   ]
 }

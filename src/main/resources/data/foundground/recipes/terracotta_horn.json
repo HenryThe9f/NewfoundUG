@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "~": {
+      "item": "minecraft:brick"
+    }
+  },
+  "pattern": [
+    " ~ ",
+    "~~ ",
+    "  ~"
+  ],
+  "result": {
+    "count": 1,
+    "item": "foundground:terracotta_horn"
+  },
+  "show_notification": true
+}

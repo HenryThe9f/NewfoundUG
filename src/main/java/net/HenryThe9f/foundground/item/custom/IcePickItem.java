@@ -22,14 +22,12 @@ public class IcePickItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
         Player pPlayer = pContext.getPlayer();
-if(pPlayer.getMainHandItem().getItem() == Moditems.CLIMBING_CLAWS.get()) {
+//if(pPlayer.getMainHandItem().getItem() == Moditems.CLIMBING_CLAWS.get()) {
     pPlayer.setDeltaMovement(pPlayer.getLookAngle().multiply(1.05f, 1.05f, 1.05f));
     pPlayer.getCooldowns().addCooldown(this, 7);
 
     return InteractionResult.SUCCESS;
-}else {
-    return InteractionResult.FAIL;
-}
+
     }
 
 

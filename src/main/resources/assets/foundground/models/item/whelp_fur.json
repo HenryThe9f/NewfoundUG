@@ -1,4 +1,6 @@
 {
-  "parent": "foundground:block/whelp_fur"
-
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "foundground:block/whelp_fur"
+  }
 }

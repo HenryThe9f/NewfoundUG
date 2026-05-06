@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": {
+      "item": "foundground:scum"
+    },
+    "R": {
+      "item": "foundground:rubber"
+    }
+  },
+  "pattern": [
+    " R ",
+    "RGR",
+    " R "
+  ],
+  "result": {
+    "item": "foundground:bubble_block"
+  },
+  "show_notification": true
+}

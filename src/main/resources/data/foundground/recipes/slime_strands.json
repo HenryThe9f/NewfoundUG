@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "foundground:slime_puddle"
+    }
+  ],
+  "result": {
+    "item": "foundground:sulphur_slime_strands"
+  }
+}

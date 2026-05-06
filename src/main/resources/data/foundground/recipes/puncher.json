@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "T": {
+      "item": "foundground:rubber"
+    },
+    "X": {
+      "item": "foundground:sulphur"
+    },
+    "E": {
+      "item": "foundground:rubber_block"
+    }
+  },
+  "pattern": [
+    "TET",
+    "#X#",
+    "#R#"
+  ],
+  "result": {
+    "item": "foundground:puncher"
+  },
+  "show_notification": true
+}

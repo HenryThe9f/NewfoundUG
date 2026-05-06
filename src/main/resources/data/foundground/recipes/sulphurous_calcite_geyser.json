@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "foundground:sulphurous_calcite"
+    },
+    "T": {
+      "item": "foundground:sulphur_slimeball"
+    },
+    "X": {
+      "item": "foundground:sulphur_block"
+    }
+  },
+  "pattern": [
+    "TTT",
+    "#X#",
+    "#X#"
+  ],
+  "result": {
+    "item": "foundground:sulphurous_calcite_geyser"
+  },
+  "show_notification": true
+}

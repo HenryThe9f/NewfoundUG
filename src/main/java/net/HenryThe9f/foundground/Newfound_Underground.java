@@ -108,7 +108,7 @@ public class Newfound_Underground
         BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.GLASS_BOTTLE), Ingredient.of(Moditems.SULPHUR.get()), new ItemStack(Moditems.SULPHUR_DUST_BOTTLE.get()));
         BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.CHARCOAL), Ingredient.of(Moditems.SULPHUR.get()), new ItemStack(Items.GUNPOWDER));
         BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.COPPER_INGOT), Ingredient.of(Moditems.SULPHUR.get()), new ItemStack(Items.REDSTONE));
-        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(Moditems.SULPHUR.get()), new ItemStack(Items.GLOWSTONE_DUST));
+        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.GLOW_INK_SAC), Ingredient.of(Moditems.SULPHUR.get()), new ItemStack(Items.GLOWSTONE_DUST));
 
 
 

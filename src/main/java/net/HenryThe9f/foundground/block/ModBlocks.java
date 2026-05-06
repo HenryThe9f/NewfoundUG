@@ -41,6 +41,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAW_IRON_ROSE = registerBlock("raw_iron_rose",
             ()-> new RawIronRoseBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)) {
             });
+
+    public static final RegistryObject<Block> RAW_IRON_ROSE_BROKEN = registerBlock("raw_iron_rose_broken",
+            ()-> new HangingRootsBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)) {
+            });
     public static final RegistryObject<Block> IRON_ROSE = registerBlock("iron_rose",
             ()-> new IronRoseBlock(BlockBehaviour.Properties.copy(Blocks.POPPY)) {
             });
@@ -84,7 +88,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LAPIS_BEDROCK_FUNGUS_CAP = registerBlock("lapis_bedrock_fungus_cap",
             ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON)) {
             });
-    public static final RegistryObject<Block> WHELP_FUR = registerBlock("whelp_fur",
+    public static final RegistryObject<Block> WHELP_FUR_BLOCK = registerBlock("whelp_fur_block",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)) {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
@@ -99,8 +103,12 @@ public class ModBlocks {
                 public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return 50;
                 }
+                @Override
+                public Item asItem() {
+                    return Moditems.WHELP_FUR.get();
+                }
             });
-    public static final RegistryObject<Block> WHELP_FUR_CARPET = registerBlock("whelp_fur_carpet",
+    public static final RegistryObject<Block> WHELP_FUR_CARPET_BLOCK = registerBlock("whelp_fur_carpet_block",
             ()-> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET)) {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
@@ -115,7 +123,12 @@ public class ModBlocks {
                 public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return 50;
                 }
-            });
+
+                @Override
+                public Item asItem() {
+                return Moditems.WHELP_FUR_CARPET.get();
+                }
+                });
     public static final RegistryObject<Block> SMOOTH_LAPIS = registerBlock("smooth_lapis",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)) {
             });
@@ -147,7 +160,7 @@ public class ModBlocks {
             ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5), ModConfiguredFeatures.HUGE_CYAN_MUSHROOM) {
             });
     public static final RegistryObject<Block> POTTED_CYAN_MUSHROOM = registerBlock("potted_cyan_mushroom",
-            ()-> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CYAN_MUSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM)) {
+            ()-> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CYAN_MUSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM).lightLevel(state -> 5)) {
             });
 
     public static final RegistryObject<Block> CYAN_MUSHROOM_CAP = registerBlock("cyan_mushroom_cap",
@@ -218,7 +231,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> SULPHUR_SLIME_BLOCK = registerBlock("sulphur_slime_block",
-            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK))  {  @Override
+            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(1))  {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -235,7 +248,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> SULPHUR_SLIME_STRANDS = registerBlock("sulphur_slime_strands",
-            ()-> new DrippingSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission())  {  @Override
+            ()-> new DrippingSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission().strength(1))  {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -260,7 +273,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> PUNCHER = registerBlock("puncher",
-            ()-> new PuncherBlock(BlockBehaviour.Properties.copy(Blocks.DISPENSER)) {
+            ()-> new PuncherBlock(BlockBehaviour.Properties.copy(Blocks.DISPENSER)){
             });
 
     public static final RegistryObject<Block> PUNCHER_FIST = registerBlock("puncher_fist",
@@ -269,7 +282,7 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> SLIME_PUDDLE = registerBlock("slime_puddle",
-            ()-> new SlimeLayerBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK))  {  @Override
+            ()-> new SlimeLayerBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(1))  {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -326,7 +339,7 @@ public class ModBlocks {
             ()-> new BonyDirtHeadBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).noOcclusion()) {
             });
     public static final RegistryObject<Block> LAPIS_RUNE = registerBlock("lapis_rune",
-            ()-> new SculkVeinBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_CONCRETE_POWDER).noOcclusion()) {
+            ()-> new SculkVeinBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_CONCRETE_POWDER).noOcclusion().noCollission().sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)) {
             });
     public static final RegistryObject<Block> BEDROCK_MYCELIUM = registerBlock("bedrock_mycelium",
             ()-> new BedrockMyceliumBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion().noCollission()) {

@@ -25,5 +25,49 @@
       "foundground:whelp_death"
 
     ]
+  },
+  "terracotta_horn": {
+    "subtitle": "sounds.foundground.terracotta_horn",
+    "sounds": [
+      "foundground:horn"
+    ]
+  },
+  "rogerfish_flop": {
+    "subtitle": "sounds.foundground.rogerfish_flop",
+    "sounds": [
+      "foundground:rogerfish_flop_1",
+      "foundground:rogerfish_flop_2",
+      "foundground:rogerfish_flop_3",
+      "foundground:rogerfish_flop_4"
+    ]
+  },
+  "rogerfish_hurt": {
+    "subtitle": "sounds.foundground.rogerfish_hurt",
+    "sounds": [
+      "foundground:rogerfish_flop_1",
+      "foundground:rogerfish_flop_2",
+      "foundground:rogerfish_flop_3",
+      "foundground:rogerfish_flop_4"
+    ]
+  },
+  "rogerfish_death": {
+    "subtitle": "sounds.foundground.rogerfish_death",
+    "sounds": [
+      "foundground:rogerfish_death"
+    ]
+  },
+"gnome_hurt": {
+"subtitle": "sounds.foundground.gnome_hurt",
+"sounds": [
+  "foundground:gnome_hurt_1",
+  "foundground:gnome_hurt_2"
+   ]
+  },
+  "gnome_death": {
+    "subtitle": "sounds.foundground.gnome_death",
+    "sounds": [
+      "foundground:gnome_hurt_1",
+      "foundground:gnome_hurt_2"
+    ]
   }
 }

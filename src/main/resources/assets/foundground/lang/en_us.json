@@ -1,5 +1,5 @@
 {
-  "item.foundground.raw_iron_rose_item": "Raw Iron Rose",
+  "block.foundground.raw_iron_rose_broken": "Raw Iron Rose",
   "item.foundground.raw_whelp": "Raw Whelp Nugget",
   "item.foundground.cooked_whelp": "Cooked Whelp Nugget",
   "item.foundground.blinding_stew": "Stew That Blinds You For One Day",
@@ -7,12 +7,24 @@
   "item.foundground.cave_spider_ingot": "Cave Spider Ingot",
   "item.foundground.whelp_torch": "Whelp Torch",
   "item.foundground.whelp_spawn_egg": "Whelp Spawn Egg",
+  "item.foundground.rogerfish_spawn_egg": "Rogerfish Spawn Egg",
+
   "item.foundground.coal_dust_bottle": "Coal Dust Bottle",
   "block.foundground.coal_dust": "Coal Dust Bottle",
+  "item.foundground.extremely_crude_pickaxe": "Extremely Crude Pickaxe",
+  "block.foundground.amber_ore": "Oreange Ore",
+  "block.foundground.forbidden_fruit_ore": "Forbidden Fruit Ore",
+  "item.foundground.oreange": "Oreange",
+  "item.foundground.forbidden_fruit": "Forbidden Fruit",
+  "item.foundground.gnome_item": "Gnome",
+  "item.foundground.terracotta_horn": "Terracotta Horn",
+  "block.foundground.bedrock_mycelium": "Bedrock Mycelium",
+  "block.foundground.bedrock_mycelium_altar": "Bedrock Mycelium Altar",
 
 
-  "block.foundground.whelp_fur": "Whelp Fur",
-  "block.foundground.whelp_fur_carpet": "Whelp Fur Carpet",
+
+  "block.foundground.whelp_fur_block": "Whelp Fur",
+  "block.foundground.whelp_fur_carpet_block": "Whelp Fur Carpet",
   "block.foundground.burning_fur": "Burning Fur",
   "block.foundground.petrified_root": "Petrified Root Block",
   "block.foundground.thorn_vines": "Petrified Roots",
@@ -24,7 +36,7 @@
   "block.foundground.iron_rooted_end_stone": "Iron Rooted End Stone",
   "block.foundground.iron_rooted_netherrack": "Iron Rooted Netherrack",
   "block.foundground.iron_rose": "Iron Rose",
-  "block.foundground.raw_iron_rose": "Raw Iron Rose (Block)",
+  "block.foundground.raw_iron_rose": "Raw Iron Rose (Natural)",
   "block.foundground.cut_lapis": "Cut Lapis",
   "block.foundground.cut_lapis_slab": "Cut Lapis Slab",
   "block.foundground.cut_lapis_stairs": "Cut Lapis Stairs",
@@ -57,14 +69,56 @@
 
   "block.foundground.sulphur_crystal": "Sulphur Crystal",
   "block.foundground.sulphur_cluster": "Sulphur Cluster",
+  "block.foundground.sulphurous_calcite": "Sulphurous Calcite",
+  "block.foundground.sulphurous_calcite_geyser": "Sulphurous Calcite Geyser",
+  "block.foundground.calcite_geyser": "Calcite Geyser",
+  "block.foundground.sulphur_slime_block": "Sulphurous Slime Block",
+  "block.foundground.sulphur_slime_strands": "Sulphurous Slime Strands",
+  "block.foundground.slime_puddle": "Sulphurous Slime Layer",
+  "item.foundground.sulphur_dust_bottle": "Sulphur Dust Bottle",
+  "block.foundground.sulphur_dust": "Sulphur Dust Bottle",
+  "block.foundground.sulphur_block": "Block of Sulphur",
+
+  "item.foundground.sulphur": "Sulphur",
+  "item.foundground.sulphur_slimeball": "Sulphurous Slimeball",
+  "item.foundground.rubber": "Rubber",
+  "block.foundground.rubber_block": "Block of Rubber",
+  "item.foundground.climbing_claws": "Rubber Climbing Gloves",
+  "item.foundground.broken_climbing_claws": "Torn Climbing Gloves",
+  "item.foundground.lapis_stamp": "Lapis Stamp",
+  "block.foundground.lapis_rune": "Lapis Stamp",
+  "block.foundground.puncher": "Puncher",
+  "block.foundground.puncher_fist": "Puncher Fist",
+
+  "block.foundground.scum": "Scum",
+  "block.foundground.bubble_block": "Bubble",
+  "block.foundground.lava_bubble_block": "Lava Bubble",
+
+  "block.foundground.cracked_bricks": "Cracked Bricks",
+  "block.foundground.chiseled_bricks": "Chiseled Bricks",
+
+  "item.foundground.rogerfish_bucket": "Bucket of Rogerfish",
+  "item.foundground.rogerfish_skull": "Rogerfish Skull",
+  "block.foundground.bony_farmland": "Bonemeal Trough",
+  "block.foundground.bony_farmland_head": "Bonemeal Trough Maw",
+
 
   "entity.foundground.whelp": "Whelp",
+  "entity.foundground.gnome": "Gnome",
+  "entity.foundground.rogerfish": "Rogerfish",
+
   "entity.foundground.welptorch": "Whelp Torch",
   "entity.foundground.goldspore": "Spectral Charge",
 
   "sounds.foundground.whelp_hurt": "Whelp Hurts",
   "sounds.foundground.whelp_idle": "Whelp Wheezes",
   "sounds.foundground.whelp_death": "Whelp Dies",
+  "sounds.foundground.terracotta_horn": "Horn Toots",
+  "sounds.foundground.rogerfish_flop": "Rogerfish Rattles",
+  "sounds.foundground.rogerfish_hurt": "Rogerfish Writhes",
+  "sounds.foundground.rogerfish_death": "Rogerfish Rended",
+  "sounds.foundground.gnome_hurt": "Gnome Chips",
+  "sounds.foundground.gnome_death": "Gnome Shatters",
 
   "creativetab.foundground_tab": "Newfound Underground",
 
@@ -76,6 +130,8 @@
   "foundground.jei.info.whelp": "Whelps are small, rat-lke creatures that have lived underground so long, bright light makes them combust. Their meat is highly saturating, and their fur is incredibly flammable. Found in petrified root systems and dripstone caverns, they eat mushrooms and ink sacs.",
   "foundground.jei.info.iron_rose": "Will root nearby stone, causing it to become instantly breakable. Uses iron nuggets instead of bonemeal, which will both force it to attempt to place roots as well as increase its effective radius by one.",
   "foundground.jei.info.lapis_lantern": "Provides haste. Even silk touch can't pick it up in one piece.",
-  "foundground.jei.info.whelp_torch": "Throwable, drops piles of burning fur as it travels."
+  "foundground.jei.info.whelp_torch": "Throwable, drops piles of burning fur as it travels.",
+  "biome.foundground.sulphur_slime_caves": "Sulphur Slime Caves",
+  "biome.foundground.roots_biome": "Petrified Root System"
 
 }

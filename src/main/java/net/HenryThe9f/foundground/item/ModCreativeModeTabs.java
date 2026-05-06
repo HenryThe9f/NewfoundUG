@@ -29,7 +29,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.FORBIDDEN_FRUIT_ORE.get());
                         pOutput.accept(Moditems.FORBIDDEN_FRUIT.get());
                         pOutput.accept(ModBlocks.RAW_IRON_ROSE.get());
-                        pOutput.accept(Moditems.RAW_IRON_ROSE_ITEM.get());
+                        pOutput.accept(ModBlocks.RAW_IRON_ROSE_BROKEN.get());
                         pOutput.accept(ModBlocks.IRON_ROSE.get());
                         pOutput.accept(ModBlocks.FRAGILE_ROOTED_STONE.get());
                         pOutput.accept(ModBlocks.FRAGILE_ROOTED_DEEPSLATE.get());
@@ -37,13 +37,19 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.IRON_ROOTED_DEEPSLATE.get());
                         pOutput.accept(ModBlocks.IRON_ROOTED_NETHERRACK.get());
                         pOutput.accept(ModBlocks.IRON_ROOTED_END_STONE.get());
-                        pOutput.accept(ModBlocks.WHELP_FUR.get());
-                        pOutput.accept(ModBlocks.WHELP_FUR_CARPET.get());
+                        pOutput.accept(Moditems.WHELP_FUR.get());
+                        pOutput.accept(Moditems.WHELP_FUR_CARPET.get());
                         pOutput.accept(Moditems.RAW_WHELP.get());
                         pOutput.accept(Moditems.COOKED_WHELP.get());
                         pOutput.accept(Moditems.WHELP_TORCH.get());
                         pOutput.accept(ModBlocks.BURNING_FUR.get());
+                        pOutput.accept(Moditems.GNOME_ITEM.get());
+                       // pOutput.accept(Moditems.CLAY_HORN.get());
+                        pOutput.accept(Moditems.TERRACOTTA_HORN.get());
+
                         pOutput.accept(ModBlocks.JAPEBOX.get());
+
+
 
                         pOutput.accept(Moditems.GOLD_SPORES.get());
                         pOutput.accept(Moditems.BLINDING_STEW.get());

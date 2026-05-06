@@ -24,9 +24,9 @@ public class FrozenWhelpBlock extends Block {
         super(pProperties);
     }
 
-    //copied from infested stone
+    //commented for now, since the structure it spawns in isnt implemented yet
 
-    public void spawnAfterBreak(BlockState pState, ServerLevel pLevel, BlockPos pPos, ItemStack pStack, boolean pDropExperience) {
+  /*  public void spawnAfterBreak(BlockState pState, ServerLevel pLevel, BlockPos pPos, ItemStack pStack, boolean pDropExperience) {
         super.spawnAfterBreak(pState, pLevel, pPos, pStack, pDropExperience);
         if (pLevel.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS) && EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, pStack) == 0) {
             for(int i=0; i<3; i++) {
@@ -41,6 +41,8 @@ public class FrozenWhelpBlock extends Block {
         }
 
     }
+    */
+
    @Override public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
 
         super.tick(pState, pLevel, pPos, pRandom);

@@ -12,7 +12,7 @@ public class ModTerrablender
     public static void registerBiomes(){
         Regions.register(new ModOverworldRegion(new ResourceLocation(MODID, "overworld"), 2));
 
-     //   5 is the normal weight, gonna use a massive one for testing
+     //   2-5 is the normal weight, gonna use a massive one for testing
 
     }
 

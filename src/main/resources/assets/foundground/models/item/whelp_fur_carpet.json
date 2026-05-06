@@ -1,4 +1,6 @@
 {
-  "parent": "foundground:block/whelp_fur_carpet"
-
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "foundground:block/whelp_fur"
+  }
 }

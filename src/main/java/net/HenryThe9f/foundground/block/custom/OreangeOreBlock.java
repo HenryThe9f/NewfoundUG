@@ -23,7 +23,7 @@ public class OreangeOreBlock extends DropExperienceBlock {
             int i = pRandom.nextInt(3);
             int j = pRandom.nextInt(3);
             int k = pRandom.nextInt(3);
-            if(pLevel.getBlockState(pPos.offset(i-1, j-1, k-1)).is(Blocks.JUNGLE_WOOD)){
+            if(pLevel.getBlockState(pPos.offset(i-1, j-1, k-1)).is(Blocks.JUNGLE_WOOD) || pLevel.getBlockState(pPos.offset(i-1, j-1, k-1)).is(Blocks.JUNGLE_LOG)){
                 if((pLevel.getBlockState(pPos.offset(i-1, j, k-1)).is(Blocks.SCULK))||(pLevel.getBlockState(pPos.offset(i-1, j, k-1)).is(Blocks.SCULK_VEIN))){
                     pLevel.setBlockAndUpdate(pPos.offset(i-1, j-1, k-1), ModBlocks.FORBIDDEN_FRUIT_ORE.get().defaultBlockState());
                 }else {

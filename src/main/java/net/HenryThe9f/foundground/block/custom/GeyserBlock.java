@@ -99,6 +99,8 @@ public class GeyserBlock extends Block implements SimpleWaterloggedBlock {
         super.animateTick(pState, pLevel, pPos, pRand);
         if (pRand.nextInt(10) == 0 && !pState.getValue(BOTTOM)) {
             pLevel.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.SULPHUR_SLIME_BLOCK.get().defaultBlockState()), (double)pPos.getX() + 0.5, (double)pPos.getY() + 1.1, (double)pPos.getZ() + 0.5, (pRand.nextDouble()-0.5)*2, (pRand.nextDouble())*2, (pRand.nextDouble()-0.5)*2);
+            pLevel.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (double)pPos.getX() + 0.5, (double)pPos.getY() + 1.1, (double)pPos.getZ() + 0.5, 0, 0.07, 0);
+
         }
     }
     public FluidState getFluidState(BlockState p_153360_) {

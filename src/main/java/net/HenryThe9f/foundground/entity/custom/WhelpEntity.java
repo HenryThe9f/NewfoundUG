@@ -76,7 +76,7 @@ public class WhelpEntity extends Animal {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new BreedGoal(this, 1));
         this.goalSelector.addGoal(2, new PanicGoal(this, 2));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1, Ingredient.of(ModTags.Items.WHELP_FOOD), false));
+            this.goalSelector.addGoal(3, new TemptGoal(this, 1, Ingredient.of(ModTags.Items.WHELP_FOOD), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1));
         this.goalSelector.addGoal(5, new CarpetGoal(this));
 
@@ -155,7 +155,7 @@ return Animal.createLivingAttributes()
             this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK, Flag.JUMP));
         }
         public void start() {
-            this.level.setBlockAndUpdate(this.mob.blockPosition(), ModBlocks.WHELP_FUR_CARPET.get().defaultBlockState());
+            this.level.setBlockAndUpdate(this.mob.blockPosition(), ModBlocks.WHELP_FUR_CARPET_BLOCK.get().defaultBlockState());
         }
 
         public void stop() {

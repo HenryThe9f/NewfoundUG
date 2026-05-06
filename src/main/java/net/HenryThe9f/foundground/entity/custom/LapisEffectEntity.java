@@ -3,26 +3,19 @@ package net.HenryThe9f.foundground.entity.custom;
 import net.HenryThe9f.foundground.entity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BeaconBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
-import javax.annotation.Nullable;
 import java.util.Iterator;
 import java.util.List;
 
-public class LapisEffectEntity extends BlockEntity {
+public class LapisEffectEntity extends BlockEntity{
     private static final int BLOCKS_CHECK_PER_TICK = 10;
 private final AABB aabb = (new AABB(this.worldPosition)).inflate(15).expandTowards(0.0, 0.0, 0.0);
     public LapisEffectEntity(BlockPos pPos, BlockState pBlockState) {

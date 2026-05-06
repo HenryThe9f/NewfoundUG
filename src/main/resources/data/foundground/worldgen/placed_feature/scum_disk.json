@@ -2,8 +2,10 @@
   "feature": "foundground:scum_disk",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 25
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 45,
+      "noise_factor": 2,
+      "noise_offset": 0
     },
     {
       "type": "minecraft:in_square"
@@ -13,7 +15,7 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 15
+          "absolute": 30
         },
         "min_inclusive": {
           "absolute": -50

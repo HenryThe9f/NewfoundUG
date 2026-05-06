@@ -1,14 +1,19 @@
 package net.HenryThe9f.foundground.entity.custom;
 
 import net.HenryThe9f.foundground.item.Moditems;
+import net.HenryThe9f.foundground.sound.ModSounds;
 import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.game.ClientboundMoveEntityPacket;
+import net.minecraft.network.protocol.game.ClientboundRotateHeadPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -20,6 +25,7 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Inventory;
@@ -47,6 +53,33 @@ public class GnomeEntity extends PathfinderMob implements ContainerEntity{
         this.itemStacks = NonNullList.withSize(27, ItemStack.EMPTY);
 
     }
+    @Override
+    protected void registerGoals() {
+        this.goalSelector.addGoal(1, new gnomeMarchGoal(this, 1, Ingredient.of(Moditems.TERRACOTTA_HORN.get()), false));
+        super.registerGoals();
+    }
+
+    public class gnomeMarchGoal extends TemptGoal {
+        private static final TargetingConditions TEMP_TARGETING = TargetingConditions.forNonCombat().range(10.0).ignoreLineOfSight();
+        private final Ingredient items;
+        private final TargetingConditions targetingConditions;
+
+        public gnomeMarchGoal(PathfinderMob pMob, double pSpeedModifier, Ingredient pItems, boolean pCanScare) {
+            super(pMob, pSpeedModifier, pItems, pCanScare);
+            this.targetingConditions = TEMP_TARGETING.copy().selector(this::shouldFollow);
+            this.items = pItems;
+        }
+        private boolean shouldFollow(LivingEntity p_148139_) {
+            return this.items.test(p_148139_.getMainHandItem()) || this.items.test(p_148139_.getOffhandItem());
+        }
+        @Override
+        public boolean canUse() {
+                this.player = this.mob.level().getNearestPlayer(this.targetingConditions, this.mob);
+                return (this.player != null && this.player.isUsingItem());
+        }
+    }
+
+
 
     @Override
     public boolean isPersistenceRequired() {
@@ -87,17 +120,34 @@ public class GnomeEntity extends PathfinderMob implements ContainerEntity{
 
     public static AttributeSupplier.Builder createAttributes(){
         return Animal.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 25D)
-                .add(Attributes.MOVEMENT_SPEED, 0.25D)
-                .add(Attributes.FOLLOW_RANGE, 32D);
+                .add(Attributes.MAX_HEALTH, 10D)
+                .add(Attributes.MOVEMENT_SPEED, 0.30D)
+                .add(Attributes.FOLLOW_RANGE, 64D);
     }
 
-    @Override
-    protected void registerGoals() {
-        this.goalSelector.addGoal(1, new TemptGoal(this, 1, Ingredient.of(Items.BRICK), false));
-        super.registerGoals();
-    }
 
+    public void syncRotToFacing() {
+        if (this.level().isClientSide) return;
+
+        float yaw;
+
+        yaw = this.getYRot();
+
+        this.setYRot(yaw);
+        this.setXRot(0f);
+        this.yHeadRot = yaw;
+        this.yHeadRotO = yaw;
+        this.yBodyRot = yaw;
+
+        ServerLevel server = (ServerLevel) this.level();
+        byte yawByte = (byte)((int)(yaw * 256.0F / 360.0F));
+        byte pitchByte = 0;
+
+        server.getChunkSource().broadcast(this,
+                new ClientboundRotateHeadPacket(this, yawByte));
+        server.getChunkSource().broadcast(this,
+                new ClientboundMoveEntityPacket.Rot(this.getId(), yawByte, pitchByte, this.onGround()));
+    }
 
     @Override
     public void setLootTable(@Nullable ResourceLocation resourceLocation) {
@@ -176,6 +226,18 @@ public class GnomeEntity extends PathfinderMob implements ContainerEntity{
         }
 
         return $$2;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return ModSounds.GNOME_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.GNOME_DEATH.get();
     }
     @Override
     public void unpackChestVehicleLootTable(@javax.annotation.Nullable Player pPlayer) {

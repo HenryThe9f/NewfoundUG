@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "foundground:rubber"
+    },
+    "T": {
+      "item": "minecraft:diamond"
+    },
+    "X": {
+      "item": "string"
+    },
+    "E": {
+      "item": "foundground:rubber_block"
+    }
+  },
+  "pattern": [
+    "TTT",
+    "#E#",
+    "#X#"
+  ],
+  "result": {
+    "item": "foundground:climbing_claws"
+  },
+  "show_notification": true
+}

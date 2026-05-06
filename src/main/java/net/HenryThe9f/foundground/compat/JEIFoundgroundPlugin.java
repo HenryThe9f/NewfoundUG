@@ -34,7 +34,7 @@ public class JEIFoundgroundPlugin implements IModPlugin {
 
         registration.addIngredientInfo(List.of(new ItemStack(ModBlocks.BEDROCK_FUNGUS_STEM.get().asItem()), new ItemStack(ModBlocks.BEDROCK_FUNGUS_CAP.get().asItem())), VanillaTypes.ITEM_STACK, ModTranslations.getTranslation("jei.info.bedrock_fungus"));
         registration.addIngredientInfo(List.of(new ItemStack(ModBlocks.CYAN_MUSHROOM.get().asItem()), new ItemStack(ModBlocks.CYANSTONE.get().asItem())), VanillaTypes.ITEM_STACK, ModTranslations.getTranslation("jei.info.cyan_mushroom"));
-        registration.addIngredientInfo(List.of(new ItemStack(Moditems.WHELP_SPAWN_EGG.get()), new ItemStack(Moditems.RAW_WHELP.get()), new ItemStack(ModBlocks.WHELP_FUR.get().asItem())), VanillaTypes.ITEM_STACK, ModTranslations.getTranslation("jei.info.whelp"));
+        registration.addIngredientInfo(List.of(new ItemStack(Moditems.WHELP_SPAWN_EGG.get()), new ItemStack(Moditems.RAW_WHELP.get()), new ItemStack(Moditems.WHELP_FUR.get().asItem())), VanillaTypes.ITEM_STACK, ModTranslations.getTranslation("jei.info.whelp"));
         registration.addIngredientInfo(List.of(new ItemStack(ModBlocks.PETRIFIED_ROOT.get().asItem())), VanillaTypes.ITEM_STACK, ModTranslations.getTranslation("jei.info.petrified"));
     }
 
