@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "foundground:forbidden_fruit_ore"
+    },
+    "X": {
+      "item": "foundground:bedrock_fungus_stem"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "#X#",
+    "X#X"
+  ],
+  "result": {
+    "item": "foundground:root_iron_ore"
+  },
+  "show_notification": true
+}
