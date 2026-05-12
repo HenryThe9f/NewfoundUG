@@ -24,7 +24,7 @@ public class ForbiddenFruitItem extends Item {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity pInteractionTarget, InteractionHand pUsedHand) {
-        if(pInteractionTarget instanceof Zombie ) {
+        if(pInteractionTarget.getType().is(ModTags.Entities.FORBIDDEN_FRUIT_EATERS)) {
             if (pInteractionTarget.level().isClientSide) {
                 pInteractionTarget.level().addParticle((ParticleTypes.EXPLOSION_EMITTER), (double)pInteractionTarget.getX(), (double)pInteractionTarget.getY() + 1.1, (double)pInteractionTarget.getZ(), 0, 0, 0);
             }

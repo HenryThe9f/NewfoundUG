@@ -84,7 +84,7 @@ public class PuncherBlock extends WorkingDirectionalBlock implements Fallable {
         BlockState vState = pLevel.getBlockState(vPos);
         if(pState.getValue(POWERED) == Boolean.FALSE && powerflag) {
 
-            if(vState.getDestroySpeed(pLevel,vPos) >= 0 && vState.getDestroySpeed(pLevel,vPos) < 50 && !vState.hasBlockEntity() && (vState.getPistonPushReaction() != PushReaction.BLOCK || vState.is(ModTags.Blocks.PUNCHER_ADDITIONAL_WHITELIST))) {
+            if(vState.getDestroySpeed(pLevel,vPos) >= 0 && vState.getDestroySpeed(pLevel,vPos) < 50 && !vState.hasBlockEntity() && (vState.getPistonPushReaction() != PushReaction.BLOCK || ( vState.is(ModTags.Blocks.PUNCHER_ADDITIONAL_WHITELIST) && !vState.is(ModTags.Blocks.PUNCHER_ADDITIONAL_BLACKLIST)))) {
                 if(vState.getPistonPushReaction() == PushReaction.DESTROY){
                     pLevel.destroyBlock(vPos, Boolean.TRUE);
                 } else {

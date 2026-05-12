@@ -93,6 +93,11 @@ public class ModCreativeModeTabs {
                         pOutput.accept(Moditems.SULPHUR.get());
                         pOutput.accept(ModBlocks.SULPHUR_BLOCK.get());
 
+                        pOutput.accept(ModBlocks.SULPHUR_BRICKS.get());
+                        pOutput.accept(ModBlocks.SULPHUR_BRICK_SLAB.get());
+                        pOutput.accept(ModBlocks.SULPHUR_BRICK_STAIRS.get());
+                        pOutput.accept(ModBlocks.SULPHUR_BRICK_WALL.get());
+
                         pOutput.accept(Moditems.SULPHUR_DUST_BOTTLE.get());
                         pOutput.accept(ModBlocks.SULPHUROUS_CALCITE.get());
                         pOutput.accept(ModBlocks.SULPHUR_CRYSTAL.get());

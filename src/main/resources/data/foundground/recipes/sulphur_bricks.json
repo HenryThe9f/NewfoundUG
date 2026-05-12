@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "foundground:calcite_bricks"
+    },
+    "X": {
+      "item": "foundground:sulphur"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "foundground:sulphur_bricks"
+  },
+  "show_notification": true
+}

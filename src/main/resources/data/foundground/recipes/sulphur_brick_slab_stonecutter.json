@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "foundground:sulphur_bricks"
+  },
+  "result": "foundground:sulphur_brick_slab"
+}

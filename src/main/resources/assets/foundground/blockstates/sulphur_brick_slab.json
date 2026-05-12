@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "foundground:block/sulphur_brick_slab"
+    },
+    "type=double": {
+      "model": "foundground:block/sulphur_bricks"
+    },
+    "type=top": {
+      "model": "foundground:block/sulphur_brick_slab_top"
+    }
+  }
+}

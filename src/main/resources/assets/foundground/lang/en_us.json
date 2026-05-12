@@ -66,6 +66,10 @@
   "block.foundground.calcite_brick_wall": "Calcite Brick Wall",
   "block.foundground.calcite_pillar": "Calcite Pillar",
   "block.foundground.chiseled_calcite": "Chiseled Calcite",
+  "block.foundground.sulphur_bricks": "Sulphur Bricks",
+  "block.foundground.sulphur_brick_slab": "Sulphur Brick Slab",
+  "block.foundground.sulphur_brick_stairs": "Sulphur Brick Stairs",
+  "block.foundground.sulphur_brick_wall": "Sulphur Brick Wall",
 
   "block.foundground.sulphur_crystal": "Sulphur Crystal",
   "block.foundground.sulphur_cluster": "Sulphur Cluster",
@@ -127,10 +131,26 @@
   "foundground.jei.info.spectral_charge": "Glows with a spectral outline in contact with air. Great for finding caves.",
   "foundground.jei.info.bedrock_fungus": "Needs to be harvested by breaking the green-speckled cap, and only plantable on bedrock. Contains aging properties.",
   "foundground.jei.info.cyan_mushroom": "Glowing stone creates mushrooms in caves above itself.",
-  "foundground.jei.info.whelp": "Whelps are small, rat-lke creatures that have lived underground so long, bright light makes them combust. Their meat is highly saturating, and their fur is incredibly flammable. Found in petrified root systems and dripstone caverns, they eat mushrooms and ink sacs.",
+  "foundground.jei.info.whelp": "Whelps are small, rat-lke creatures that have lived underground so long, bright light makes them combust. Their meat is highly saturating, and their fur is incredibly flammable. Found in petrified root systems, sulphur slime caves and dripstone caverns, they eat mushrooms and ink sacs.",
   "foundground.jei.info.iron_rose": "Will root nearby stone, causing it to become instantly breakable. Uses iron nuggets instead of bonemeal, which will both force it to attempt to place roots as well as increase its effective radius by one.",
   "foundground.jei.info.lapis_lantern": "Provides haste. Even silk touch can't pick it up in one piece.",
-  "foundground.jei.info.whelp_torch": "Throwable, drops piles of burning fur as it travels.",
+  "foundground.jei.info.forbidden": "Created when an oreange ore grows onto an adjacent piece of jungle wood buried underneath sculk. Oddly apple-shaped, though you don't think it looks very edible... maybe a ravenous zombie would be willing to try it?",
+  "foundground.jei.info.coal": "Dense coal ore drops a ton of coal, but its explosive dust will explode on contact with any kind of heat or flame, even one held in your hand!",
+  "foundground.jei.info.gnome": "A pot-shaped statue which can hold a chest's worth of items. They don't seem like living creatures, though that might change if you play a terracotta horn!",
+  "foundground.jei.info.mycelium": "Will root blocks thrown onto it into the ground, placing them into the world. The altar can create bedrock mycelium above itself",
+  "foundground.jei.info.sulphur": "Can be found when mining various sulphurous blocks, which occasionally produces sulphur alongside dangerous explosive dust. Can be combined with slime to vulcanize it into rubber, or in a brewing stand to create the 3 brewing dusts. The 'ph' gives it flavor.",
+  "foundground.jei.info.sulphur_dust": "Similar to coal dust, but will decay and crystalize if touching glass or calcite. Using a brewing stand might give you more sulphur than you started with.",
+  "foundground.jei.info.stamp": "Uses lapis to place stamps. Shift right click to destroy all stamped blocks!",
+  "foundground.jei.info.puncher": "Like a piston with a slime block, except it turns blocks it hits into gravity blocks.",
+  "foundground.jei.info.bone_trough": "Throwing bone meal into the head can spread it through the rest of the body. Segments closer to the head are more likely to be grown. Cannot be used to grow trees.",
+  "foundground.jei.info.rogerfish": "Hostile cave-dwelling fish, they will shred skeletons into tiny fragments in an attempt to allow more of their kindred to be born.",
+  "foundground.jei.info.climbing_claws": "Can be used to climb walls and ceilings, will be tattered if the player is damaged and need to be repaired in the crafting window.",
+
+
+
+
+
+
   "biome.foundground.sulphur_slime_caves": "Sulphur Slime Caves",
   "biome.foundground.roots_biome": "Petrified Root System"
 

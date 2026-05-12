@@ -79,13 +79,13 @@
     [
       "foundground:calcite_ore",
       "foundground:sulphur_calcite_ore",
-      "foundground:sulphurous_calcite_geyser",
-      "foundground:calcite_geyser",
+
       "foundground:slime_drippings",
       "foundground:slime_drippings_big",
-      "foundground:sulphur_spike_patch"
+      "foundground:sulphur_spike_patch",
 
-
+      "foundground:sulphurous_calcite_geyser",
+      "foundground:calcite_geyser"
     ],
     [
       "minecraft:freeze_top_layer"

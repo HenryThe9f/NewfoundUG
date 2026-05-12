@@ -9,16 +9,19 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.function.Supplier;
 public class ModBlocks {
@@ -74,22 +77,22 @@ public class ModBlocks {
             ()-> new BurningFurBlock(BlockBehaviour.Properties.copy(Blocks.TORCH).sound(SoundType.WOOL)) {
             });
     public static final RegistryObject<Block> JAPEBOX = registerBlock("japebox",
-            ()-> new FrozenWhelpBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX)) {
+            ()-> new FrozenWhelpBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX).mapColor(MapColor.WARPED_STEM)) {
             });
     public static final RegistryObject<Block> LAPIS_LANTERN = registerBlock("lapis_lantern",
-            ()-> new LapisEffectBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.DEEPSLATE_BRICKS).noOcclusion()) {
+            ()-> new LapisEffectBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.DEEPSLATE_BRICKS).noOcclusion().mapColor(MapColor.LAPIS)) {
             });
     public static final RegistryObject<Block> BEDROCK_FUNGUS_STEM = registerBlock("bedrock_fungus_stem",
-            ()-> new BedrockFungusStemBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion().strength(7)) {
+            ()-> new BedrockFungusStemBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion().strength(7).mapColor(MapColor.COLOR_BLACK)) {
             });
     public static final RegistryObject<Block> BEDROCK_FUNGUS_CAP = registerBlock("bedrock_fungus_cap",
-            ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON)) {
+            ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON).mapColor(MapColor.COLOR_BLACK)) {
             });
     public static final RegistryObject<Block> LAPIS_BEDROCK_FUNGUS_CAP = registerBlock("lapis_bedrock_fungus_cap",
-            ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON)) {
+            ()-> new BedrockFungusCapBlock(BlockBehaviour.Properties.copy(Blocks.MELON).mapColor(MapColor.COLOR_BLACK)) {
             });
     public static final RegistryObject<Block> WHELP_FUR_BLOCK = registerBlock("whelp_fur_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)) {  @Override
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_WOOL)) {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -109,7 +112,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<Block> WHELP_FUR_CARPET_BLOCK = registerBlock("whelp_fur_carpet_block",
-            ()-> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET)) {  @Override
+            ()-> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_CARPET)) {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -157,17 +160,17 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> CYAN_MUSHROOM = registerBlock("cyan_mushroom",
-            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5), ModConfiguredFeatures.HUGE_CYAN_MUSHROOM) {
+            ()-> new LightProofMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).lightLevel(state -> 5).mapColor(MapColor.DIAMOND), ModConfiguredFeatures.HUGE_CYAN_MUSHROOM) {
             });
     public static final RegistryObject<Block> POTTED_CYAN_MUSHROOM = registerBlock("potted_cyan_mushroom",
-            ()-> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CYAN_MUSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM).lightLevel(state -> 5)) {
+            ()-> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CYAN_MUSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_RED_MUSHROOM).lightLevel(state -> 5).mapColor(MapColor.DIAMOND)) {
             });
 
     public static final RegistryObject<Block> CYAN_MUSHROOM_CAP = registerBlock("cyan_mushroom_cap",
-            ()-> new BouncyMushroomBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).lightLevel(state -> 5)) {
+            ()-> new BouncyMushroomBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).lightLevel(state -> 5).mapColor(MapColor.DIAMOND)) {
             });
     public static final RegistryObject<Block> FAKE_BEDROCK = registerBlock("fake_bedrock",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)) {
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).mapColor(MapColor.STONE)) {
             });
 
     public static final RegistryObject<Block> COAL_DUST = registerBlock("coal_dust",
@@ -219,7 +222,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> SULPHUROUS_CALCITE = registerBlock("sulphurous_calcite",
-            ()-> new SulphurBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+            ()-> new SulphurBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE).mapColor(MapColor.COLOR_YELLOW)) {
             });
 
     public static final RegistryObject<Block> SULPHUR_CLUSTER = registerBlock("sulphur_cluster",
@@ -231,7 +234,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> SULPHUR_SLIME_BLOCK = registerBlock("sulphur_slime_block",
-            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(1))  {  @Override
+            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(1).mapColor(MapColor.WARPED_WART_BLOCK))  {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -248,7 +251,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> SULPHUR_SLIME_STRANDS = registerBlock("sulphur_slime_strands",
-            ()-> new DrippingSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission().strength(1))  {  @Override
+            ()-> new DrippingSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission().strength(1).mapColor(MapColor.WARPED_WART_BLOCK))  {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -273,16 +276,16 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> PUNCHER = registerBlock("puncher",
-            ()-> new PuncherBlock(BlockBehaviour.Properties.copy(Blocks.DISPENSER)){
+            ()-> new PuncherBlock(BlockBehaviour.Properties.copy(Blocks.DISPENSER).mapColor(MapColor.COLOR_GREEN)){
             });
 
     public static final RegistryObject<Block> PUNCHER_FIST = registerBlock("puncher_fist",
-            ()-> new FistBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission().pushReaction(PushReaction.DESTROY)) {
+            ()-> new FistBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noCollission().pushReaction(PushReaction.DESTROY).mapColor(MapColor.COLOR_GREEN)) {
             });
 
 
     public static final RegistryObject<Block> SLIME_PUDDLE = registerBlock("slime_puddle",
-            ()-> new SlimeLayerBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(1))  {  @Override
+            ()-> new SlimeLayerBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(1).mapColor(MapColor.WARPED_WART_BLOCK))  {  @Override
             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                 return true;
             }
@@ -299,11 +302,11 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> RUBBER_BLOCK = registerBlock("rubber_block",
-            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).friction(0.6F).speedFactor(1).jumpFactor(2)) {
+            ()-> new SlimeBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_WOOL).friction(0.6F).speedFactor(1).jumpFactor(2).mapColor(MapColor.COLOR_GREEN)) {
             });
 
     public static final RegistryObject<Block> SULPHUR_BLOCK = registerBlock("sulphur_block",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)) {
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK).mapColor(MapColor.COLOR_YELLOW)) {
             });
 
     public static final RegistryObject<Block> CRACKED_BRICKS = registerBlock("cracked_bricks",
@@ -318,31 +321,31 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> BUBBLE_BLOCK = registerBlock("bubble_block",
-            ()-> new BubbleBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK).noCollission().sound(SoundType.HONEY_BLOCK)) {
+            ()-> new BubbleBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK).noCollission().sound(SoundType.HONEY_BLOCK).mapColor(MapColor.COLOR_CYAN)) {
             });
 
-    public static final RegistryObject<Block> CALCITE_EGG = registerBlock("calcite_egg",
-            ()-> new PetrifiedBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
-            });
+   // public static final RegistryObject<Block> CALCITE_EGG = registerBlock("calcite_egg",
+      //      ()-> new PetrifiedBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)) {
+      //      });
 
 
    // public static final RegistryObject<Block> DEBUG_BLOCK = registerBlock("debug_block",
           //  ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)) {
          //   });
     public static final RegistryObject<Block> LAVA_BUBBLE_BLOCK = registerBlock("lava_bubble_block",
-            ()-> new LavaBubbleBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK).noCollission().sound(SoundType.HONEY_BLOCK)) {
+            ()-> new LavaBubbleBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK).noCollission().sound(SoundType.HONEY_BLOCK).mapColor(MapColor.FIRE)) {
             });
     public static final RegistryObject<Block> BONY_FARMLAND = registerBlock("bony_farmland",
             ()-> new BonyDirtBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)) {
             });
     public static final RegistryObject<Block> BONY_FARMLAND_HEAD = registerBlock("bony_farmland_head",
-            ()-> new BonyDirtHeadBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).noOcclusion()) {
+            ()-> new BonyDirtHeadBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).noOcclusion().mapColor(MapColor.TERRACOTTA_WHITE)) {
             });
     public static final RegistryObject<Block> LAPIS_RUNE = registerBlock("lapis_rune",
             ()-> new SculkVeinBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_CONCRETE_POWDER).noOcclusion().noCollission().sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)) {
             });
     public static final RegistryObject<Block> BEDROCK_MYCELIUM = registerBlock("bedrock_mycelium",
-            ()-> new BedrockMyceliumBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion().noCollission()) {
+            ()-> new BedrockMyceliumBlock(BlockBehaviour.Properties.copy(Blocks.MELON).noOcclusion().noCollission().mapColor(MapColor.COLOR_BLACK)) {
             });
     public static final RegistryObject<Block> BEDROCK_MYCELIUM_ALTAR = registerBlock("bedrock_mycelium_altar",
             ()-> new BedrockMyceliumAltarBlock(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE).noOcclusion()) {
@@ -354,10 +357,22 @@ public class ModBlocks {
             ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WOOD), ConstantInt.of(2)) {
             });
 
-
+    public static final RegistryObject<Block> SULPHUR_BRICKS = registerBlock("sulphur_bricks",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE).sound(SoundType.NETHER_BRICKS).mapColor(MapColor.COLOR_YELLOW)) {
+            });
+    public static final RegistryObject<Block> SULPHUR_BRICK_STAIRS = registerBlock("sulphur_brick_stairs",
+            ()-> new StairBlock(() -> ModBlocks.SULPHUR_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.CALCITE).sound(SoundType.NETHER_BRICKS).mapColor(MapColor.COLOR_YELLOW)) {
+            });
+    public static final RegistryObject<Block> SULPHUR_BRICK_SLAB = registerBlock("sulphur_brick_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE).sound(SoundType.NETHER_BRICKS).mapColor(MapColor.COLOR_YELLOW)) {
+            });
+    public static final RegistryObject<Block> SULPHUR_BRICK_WALL = registerBlock("sulphur_brick_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE).sound(SoundType.NETHER_BRICKS).mapColor(MapColor.COLOR_YELLOW)) {
+            });
 
     ///EVERYTHING BELOW HERE IS OLD
-
+//wow i had a lot of bullshit on this old project
 
 
 

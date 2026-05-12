@@ -1,6 +1,7 @@
 package net.HenryThe9f.foundground.block.custom;
 
 import net.HenryThe9f.foundground.block.ModBlocks;
+import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -39,7 +40,7 @@ public class BedrockMyceliumBlock extends Block {
 
     @Override
     public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
-        if(pEntity instanceof ItemEntity && ((ItemEntity) pEntity).getItem().getItem().getClass() == BlockItem.class && !((ItemEntity) pEntity).getItem().hasTag() && ((BlockItem) ((ItemEntity) pEntity).getItem().getItem()).getBlock().defaultBlockState().getFluidState().is(Fluids.EMPTY)){
+        if(pEntity instanceof ItemEntity && ((ItemEntity) pEntity).getItem().getItem().getClass() == BlockItem.class && !((ItemEntity) pEntity).getItem().hasTag() && ((BlockItem) ((ItemEntity) pEntity).getItem().getItem()).getBlock().defaultBlockState().getFluidState().is(Fluids.EMPTY) && !((BlockItem) ((ItemEntity) pEntity).getItem().getItem()).getBlock().defaultBlockState().is(ModTags.Blocks.BEDROCK_MYCELIUM_BLACKLIST)){
             Block pBlock = ((BlockItem) ((ItemEntity) pEntity).getItem().getItem()).getBlock();
             if(pBlock.canSurvive(pBlock.defaultBlockState(), pLevel, pPos)) {
                 ((ItemEntity) pEntity).getItem().setCount(((ItemEntity) pEntity).getItem().getCount() - 1);

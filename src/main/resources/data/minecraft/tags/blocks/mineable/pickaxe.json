@@ -41,8 +41,10 @@
     "foundground:bony_farmland_head",
     "foundground:puncher",
     "foundground:cracked_bricks",
-    "foundground:chiseled_bricks"
-
-
+    "foundground:chiseled_bricks",
+    "foundground:sulphur_bricks",
+    "foundground:sulphur_brick_slab",
+    "foundground:sulphur_brick_stairs",
+    "foundground:sulphur_brick_wall"
   ]
 }

@@ -20,10 +20,13 @@ public class ModTags {
         public static final TagKey<Block> END_ROOTABLE = tag("end_rootable");
         public static final TagKey<Block> IGNITES_GAS = tag("ignites_gas");
         public static final TagKey<Block> SULPHUR_CRYSTALIZER = tag("sulphur_crystalizer");
-        public static final TagKey<Block> SULPHUR_GASSY = tag("sulphur_gassy");
-        public static final TagKey<Block> COAL_GASSY = tag("coal_gassy");
+        public static final TagKey<Block> SULPHUR_GASSY = tag("sulphur_gassy"); //unused
+        public static final TagKey<Block> COAL_GASSY = tag("coal_gassy"); //unused
 
         public static final TagKey<Block> PUNCHER_ADDITIONAL_WHITELIST = tag("puncher_additional_whitelist");
+
+        public static final TagKey<Block> PUNCHER_ADDITIONAL_BLACKLIST = tag("puncher_additional_blacklist");
+        public static final TagKey<Block> BEDROCK_MYCELIUM_BLACKLIST = tag("bedrock_mycelium_blacklist");
 
 
         private static TagKey<Block> tag(String name) {
@@ -44,6 +47,7 @@ public class ModTags {
     public static class Entities {
 
         public static final TagKey<EntityType<?>> AMBER_EGG_MOBS = tag("amber_egg_mobs");
+        public static final TagKey<EntityType<?>> FORBIDDEN_FRUIT_EATERS = tag("forbidden_fruit_eaters");
 
         private static TagKey<EntityType<?>> tag(String name) {
             return EntityTypeTags.create(new ResourceLocation(Newfound_Underground.MODID, name).toString());
