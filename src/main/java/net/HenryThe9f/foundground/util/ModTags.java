@@ -28,6 +28,7 @@ public class ModTags {
         public static final TagKey<Block> PUNCHER_ADDITIONAL_BLACKLIST = tag("puncher_additional_blacklist");
         public static final TagKey<Block> BEDROCK_MYCELIUM_BLACKLIST = tag("bedrock_mycelium_blacklist");
 
+        public static final TagKey<Block> WHELP_SPAWNS_ON = tag("whelp_spawns_on");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(Newfound_Underground.MODID, name));

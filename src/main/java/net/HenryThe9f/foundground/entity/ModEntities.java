@@ -25,7 +25,7 @@ public class ModEntities {
                     .sized(0.25f, 0.25f).build("sulphurslimedrop"));
 
     public static final RegistryObject<EntityType<WhelpEntity>> WHELP =
-            ENTITY_TYPES.register("whelp", () -> EntityType.Builder.of(WhelpEntity::new, MobCategory.CREATURE)
+            ENTITY_TYPES.register("whelp", () -> EntityType.Builder.of(WhelpEntity::new, MobCategory.AXOLOTLS)
                     .sized(0.45f, 0.45f).build("whelp"));
 
     public static final RegistryObject<EntityType<RogerfishEntity>> ROGERFISH =

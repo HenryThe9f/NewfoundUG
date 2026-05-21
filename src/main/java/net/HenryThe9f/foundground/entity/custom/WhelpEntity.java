@@ -7,7 +7,6 @@ import net.HenryThe9f.foundground.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -15,26 +14,17 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.monster.Husk;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
-import java.util.function.Predicate;
-
-import static net.minecraft.world.entity.monster.Monster.checkMonsterSpawnRules;
 
 public class WhelpEntity extends Animal {
 
@@ -44,8 +34,11 @@ public class WhelpEntity extends Animal {
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1F);
     }
     public static boolean checkWhelpSpawnRules(EntityType<WhelpEntity> pWhelp, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        return !pLevel.canSeeSky(pPos);
+        return pLevel.getBlockState(pPos.below()).is(ModTags.Blocks.WHELP_SPAWNS_ON) && !pLevel.canSeeSky(pPos);
     }
+
+
+
     @Override public float getWalkTargetValue(BlockPos pPos, LevelReader pLevel) {
         if((pLevel.getRawBrightness(pPos, 0) >= 12)){
             light = true;
@@ -162,7 +155,7 @@ return Animal.createLivingAttributes()
             super.stop();
         }
             public boolean canUse() {
-            if (this.mob.getRandom().nextInt(2000) == 0 && !this.mob.isBaby() && level.getLightLevelDependentMagicValue(this.mob.blockPosition()) == 0 && level.isEmptyBlock(this.mob.blockPosition()) && level.getBlockState(this.mob.blockPosition().offset(0, -1, 0)).is(Tags.Blocks.STONE)) {
+            if (this.mob.getRandom().nextInt(20000) == 0 && !this.mob.isBaby() && level.getLightLevelDependentMagicValue(this.mob.blockPosition()) == 0 && level.isEmptyBlock(this.mob.blockPosition()) && level.getBlockState(this.mob.blockPosition().below()).is(ModTags.Blocks.WHELP_SPAWNS_ON)) {
                 return true;
             } else {
                 return false;
@@ -179,6 +172,11 @@ return Animal.createLivingAttributes()
                 super.aiStep();
         }
     }
-
+/*
+    @Override
+    public boolean isPersistenceRequired() {
+        return true;
+    }
+*/
 
 }

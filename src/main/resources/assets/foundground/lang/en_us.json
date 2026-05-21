@@ -131,7 +131,7 @@
   "foundground.jei.info.spectral_charge": "Glows with a spectral outline in contact with air. Great for finding caves.",
   "foundground.jei.info.bedrock_fungus": "Needs to be harvested by breaking the green-speckled cap, and only plantable on bedrock. Contains aging properties.",
   "foundground.jei.info.cyan_mushroom": "Glowing stone creates mushrooms in caves above itself.",
-  "foundground.jei.info.whelp": "Whelps are small, rat-lke creatures that have lived underground so long, bright light makes them combust. Their meat is highly saturating, and their fur is incredibly flammable. Found in petrified root systems, sulphur slime caves and dripstone caverns, they eat mushrooms and ink sacs.",
+  "foundground.jei.info.whelp": "Whelps are small, rat-lke creatures that have lived underground so long, bright light makes them combust. Their meat is highly saturating, and their often-shed fur is incredibly flammable. They eat mushrooms and ink sacs, and can be found in dripstone caves and petrified root systems.",
   "foundground.jei.info.iron_rose": "Will root nearby stone, causing it to become instantly breakable. Uses iron nuggets instead of bonemeal, which will both force it to attempt to place roots as well as increase its effective radius by one.",
   "foundground.jei.info.lapis_lantern": "Provides haste. Even silk touch can't pick it up in one piece.",
   "foundground.jei.info.forbidden": "Created when an oreange ore grows onto an adjacent piece of jungle wood buried underneath sculk. Oddly apple-shaped, though you don't think it looks very edible... maybe a ravenous zombie would be willing to try it?",
